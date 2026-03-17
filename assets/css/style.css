@@ -132,7 +132,7 @@ section    { padding: 6rem 0; }
   margin: 0 auto 2rem; display: block;
   filter: drop-shadow(0 0 30px rgba(28,200,232,0.4));
 }
-.hero-content h1   { text-shadow: 0 2px 24px rgba(0,0,0,0.6); margin-bottom: 0.5rem; }
+.hero-content h1   { text-shadow: 0 2px 8px rgba(0,0,0,0.9); margin-bottom: 0.5rem; }
 .hero-subtitle     { font-family: var(--heading); font-size: clamp(1rem, 2.2vw, 1.5rem);
                      letter-spacing: 0.4em; color: var(--light); margin-bottom: 2.5rem; }
 .hero-ctas         { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
