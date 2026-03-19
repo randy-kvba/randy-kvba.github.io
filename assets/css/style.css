@@ -378,17 +378,17 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 /* ─── LIGHT SECTION VARIANT ─────────────────────────────────────────────── */
 /* Override CSS custom properties so all var() references invert automatically */
 .section-light {
-  --white:     #0f0f0f;
-  --light:     #2d2d2d;
-  --gray:      #5e5e5e;
-  --border:    rgba(0, 0, 0, 0.09);
-  --bg:        #f5f4f1;
-  --bg-2:      #eae9e6;
-  --bg-3:      #dddcda;
+  --white:     #1a1614;
+  --light:     #3a3530;
+  --gray:      #6b645e;
+  --border:    rgba(0, 0, 0, 0.10);
+  --bg:        #ddd8d0;
+  --bg-2:      #d0cbc3;
+  --bg-3:      #c5c0b8;
   --blue:      #0881a0;
   --blue-dark: #0e7490;
   --blue-glow: rgba(8, 145, 178, 0.10);
-  background:  #f5f4f1;
+  background:  linear-gradient(180deg, #e5e0d8 0%, #d8d3cb 100%);
   color:       var(--white); /* explicit so children inherit dark text */
 }
 /* Elements with hardcoded dark backgrounds stay readable inside light sections */
