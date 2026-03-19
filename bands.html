@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Community &amp; Local Bands | Kalamazoo Valley Blues Association</title>
-  <meta name="description" content="Discover local blues bands, musicians, and blues venues in Kalamazoo Valley — brought to you by KVBA." />
+  <title>Member Bands | Kalamazoo Valley Blues Association</title>
+  <meta name="description" content="Meet the KVBA member bands keeping the blues alive in Kalamazoo Valley. Click any band name to visit their website." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -13,11 +13,57 @@
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
-    .band-placeholder {
-      width: 100%; height: 200px; background: var(--bg-2);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--heading); font-size: 3rem; color: var(--blue);
+
+    /* ── Member band name cards ── */
+    .band-name-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
     }
+    .band-name-card {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+      text-decoration: none; color: var(--white);
+      transition: border-color var(--ease), transform var(--ease), box-shadow var(--ease);
+    }
+    .band-name-card:hover {
+      border-color: var(--blue); transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--blue-glow);
+      color: var(--blue);
+    }
+    .band-name-card .band-icon {
+      font-size: 1.1rem; flex-shrink: 0; opacity: 0.6;
+    }
+    .band-name-card:hover .band-icon { opacity: 1; }
+    .band-name-card span {
+      font-family: var(--heading); font-size: 1.05rem; letter-spacing: 0.04em; line-height: 1.2;
+    }
+
+    /* ── "Your Band Here" placeholder cards ── */
+    .band-name-card.placeholder {
+      border-style: dashed; border-color: rgba(28,200,232,0.25);
+      color: var(--gray);
+    }
+    .band-name-card.placeholder:hover {
+      border-color: var(--blue); color: var(--blue);
+    }
+    .band-name-card.placeholder span { font-style: italic; }
+
+    /* ── Non-member band list ── */
+    .non-member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.5rem;
+    }
+    .non-member-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 0.75rem;
+      border-radius: 6px; color: var(--light); font-size: 0.9rem;
+      border: 1px solid transparent;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .non-member-item::before { content: '♪'; color: var(--blue); opacity: 0.5; flex-shrink: 0; }
   </style>
 </head>
 <body>
@@ -45,96 +91,89 @@
 <!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
 <div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.5), rgba(8,8,8,0.98)), url('assets/images/622866035_1333232205512903_3604724497939376705_n.jpg'); background-size: cover; background-position: center top;">
   <div class="container">
-    <span class="section-label">Local Blues Scene</span>
-    <h1>Community &amp; <span class="blue">Local Bands</span></h1>
-    <p>Southwest Michigan is home to an incredible blues community. Meet the artists keeping the tradition alive on stages across Kalamazoo Valley.</p>
+    <span class="section-label">Kalamazoo Blues Scene</span>
+    <h1>Meet Our <span class="blue">Member Bands</span></h1>
+    <p>Click on any band name to visit their website and learn more. These are the artists keeping the blues alive in Southwest Michigan.</p>
   </div>
 </div>
 
-<!-- ─── LOCAL BANDS ─────────────────────────────────────────────── -->
+<!-- ─── MEMBER BANDS ─────────────────────────────────────────────── -->
 <section>
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">The Local Scene</span>
-      <h2>Kalamazoo Valley <span class="blue">Blues Artists</span></h2>
-      <p>These artists regularly perform at KVBA events and blues jams throughout the region. Click through to find them on social media and catch them live.</p>
-    </div>
-    <div class="bands-grid reveal">
-
-      <div class="band-card">
-        <div class="band-img">
-          <img src="assets/images/sample2.jpg" alt="Tonya Martini Band" />
-        </div>
-        <div class="band-info">
-          <span class="band-genre">Blues / Soul / R&amp;B</span>
-          <h3>Tonya Martini Band</h3>
-          <p>Powerful vocals and soulful delivery make Tonya Martini one of the most captivating performers in the Kalamazoo blues scene. A Winter Blues Series staple.</p>
-        </div>
-      </div>
-
-      <div class="band-card">
-        <div class="band-img">
-          <img src="assets/images/518357501_1176131844556274_4112542686960312458_n.jpg" alt="JR Clark Band" />
-        </div>
-        <div class="band-info">
-          <span class="band-genre">Blues / Roots Rock</span>
-          <h3>JR Clark Band</h3>
-          <p>Sharp guitar work and tight grooves define the JR Clark Band. A regular at Winter Blues Series and KVBA events around the valley.</p>
-        </div>
-      </div>
-
-      <div class="band-card">
-        <div class="band-img">
-          <div class="band-placeholder">🎸</div>
-        </div>
-        <div class="band-info">
-          <span class="band-genre">Blues / Rock</span>
-          <h3>Out of Favor Boys</h3>
-          <p>A beloved Kalamazoo act blending traditional blues with roots rock energy. Consistent crowd favorites at Shakespeare's and KVBA events.</p>
-        </div>
-      </div>
-
-      <div class="band-card">
-        <div class="band-img">
-          <img src="assets/images/Messenger_creation_C5F40A96-31F3-4BCE-A753-2F58A3DBD801.jpeg" alt="Jim Klein Band" />
-        </div>
-        <div class="band-info">
-          <span class="band-genre">Delta Blues / Traditional</span>
-          <h3>Jim Klein Band</h3>
-          <p>Jim Klein hosts the beloved monthly Saturday jam at Old Dog Tavern. Steeped in Delta blues tradition, his band brings deep feel and authenticity every time.</p>
-        </div>
-      </div>
-
-      <div class="band-card">
-        <div class="band-img">
-          <div class="band-placeholder">🎵</div>
-        </div>
-        <div class="band-info">
-          <span class="band-genre">Contemporary Blues</span>
-          <h3>Blueback</h3>
-          <p>One of Kalamazoo's most exciting bands, Blueback recently celebrated a CD release at Crawlspace Theater. Contemporary blues with serious chops.</p>
-        </div>
-      </div>
-
-      <div class="band-card">
-        <div class="band-img">
-          <img src="assets/images/Messenger_creation_3E051B6E-1FED-45DF-B938-CCC9328BC4F0.jpeg" alt="The Cats" />
-        </div>
-        <div class="band-info">
-          <span class="band-genre">Blues / Chicago Style</span>
-          <h3>The Cats</h3>
-          <p>The Cats host the legendary Wednesday blues jam at Shakespeare's Lower Level. The beating heart of the Kalamazoo open-jam tradition.</p>
-        </div>
-      </div>
-
+      <span class="section-label">KVBA Members</span>
+      <h2>Member <span class="blue">Bands</span></h2>
+      <p>KVBA member bands are actively promoted on Facebook, Instagram, and at KVBA events throughout the year.</p>
     </div>
 
-    <!-- Add your band CTA -->
-    <div class="text-center mt-3 reveal" style="background:var(--bg-3); border:1px solid var(--border); border-radius:var(--radius); padding:3rem 2rem;">
-      <span class="section-label">Are you a local blues artist?</span>
-      <h2 style="font-size:2rem; margin-bottom:0.75rem;">Get Listed on <span class="blue">KVBA</span></h2>
-      <p style="color:var(--light); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto;">KVBA supports the entire local blues community. If you're a blues musician or band based in Southwest Michigan, we'd love to feature you here.</p>
-      <a href="mailto:info@kvba.org?subject=Band Listing Request" class="btn btn-primary">Contact Us</a>
+    <div class="band-name-grid reveal">
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Asamu Johnson &amp; The Associates of the Blues</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Barrelhouse Blues</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Blue Veins</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Blueback</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Chris Canas Band</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Nicholas Cocco</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Crossroads Resurrection</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Detroit Blu</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Hank Mowery &amp; The Hawktones</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Joe Johnson &amp; The Bluebacks</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>J R Clark</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Kathleen &amp; The Bridge St. Band</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>The Kennedy Affair</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Lefthanded Rollers</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Lexie Blue</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Out of Favor Boys</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Resurrection Blues Band</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>5 Second Rule</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>The Undertakers Blues Band</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Jim Klein Trio</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Sunny Bleau and the Moons</span></a>
+      <a href="#" class="band-name-card"><span class="band-icon">🎸</span><span>Tonya Martini &amp; The Bluetones</span></a>
+      <a href="membership.html" class="band-name-card placeholder"><span class="band-icon">＋</span><span>Your Band Here!</span></a>
+      <a href="membership.html" class="band-name-card placeholder"><span class="band-icon">＋</span><span>Your Band Here!</span></a>
+      <a href="membership.html" class="band-name-card placeholder"><span class="band-icon">＋</span><span>Your Band Here!</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NON-MEMBER BANDS ─────────────────────────────────────────────── -->
+<section style="background:var(--bg-2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">The Broader Scene</span>
+      <h2>More <span class="blue">Local Blues</span></h2>
+      <p>Kalamazoo is home to many talented blues artists. Support our non-member bands too!</p>
+    </div>
+    <div class="non-member-grid reveal">
+      <div class="non-member-item">A Mays and Blue</div>
+      <div class="non-member-item">Blue Justice</div>
+      <div class="non-member-item">Hired Hands</div>
+      <div class="non-member-item">Hoopties</div>
+      <div class="non-member-item">Hunt &amp; Gator</div>
+      <div class="non-member-item">Jake Kershaw Band</div>
+      <div class="non-member-item">Jim Shaneberger Band</div>
+      <div class="non-member-item">Kevin Nichols and Blue Tuesday</div>
+      <div class="non-member-item">Martila Sanders and Gee Q</div>
+      <div class="non-member-item">Mortals 2</div>
+      <div class="non-member-item">Seventh Son</div>
+      <div class="non-member-item">Stan Budzynski &amp; Third Degree</div>
+      <div class="non-member-item">Steve Hilger Band</div>
+      <div class="non-member-item">SWB</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── JOIN CTA ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="reveal" style="background: linear-gradient(135deg, #08141e 0%, var(--bg-3) 100%); border: 1px solid rgba(28,200,232,0.3); border-radius: var(--radius); padding: 4rem 3rem; text-align: center; max-width: 720px; margin: 0 auto;">
+      <span class="section-label">Are You a Blues Band?</span>
+      <h2>Become a <span class="blue">Member Band</span></h2>
+      <p style="color:var(--light); margin: 1rem auto 2rem; max-width:520px;">Member bands are actively promoted on Facebook, Instagram, and wherever KVBA shows up. Sign up, then send your band assets to <a href="mailto:kayla@kvba.org" style="color:var(--blue);">kayla@kvba.org</a> to get added to the site.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="membership.html#band" class="btn btn-primary">Join as a Band — $40</a>
+        <a href="mailto:kayla@kvba.org?subject=Band Membership Assets" class="btn btn-blue-outline">Send Band Assets</a>
+      </div>
     </div>
   </div>
 </section>
@@ -148,32 +187,26 @@
       <p>These Kalamazoo-area venues support live blues and regularly host KVBA events and jams.</p>
     </div>
     <div class="venues-grid reveal">
-
       <div class="venue-card">
         <h3>Shakespeare's Pub</h3>
         <p>241 E Kalamazoo Ave, Kalamazoo<br>Home of the Wednesday night blues jam w/ The Cats. Upper and lower level stages.</p>
       </div>
-
       <div class="venue-card">
         <h3>Old Dog Tavern</h3>
-        <p>108 E Michigan Ave, Kalamazoo<br>Monthly Saturday blues jams hosted by Jim Klein Band. Great neighborhood bar with a rich blues history.</p>
+        <p>108 E Michigan Ave, Kalamazoo<br>Monthly Saturday blues jams hosted by Jim Klein. Great neighborhood bar with a rich blues history.</p>
       </div>
-
       <div class="venue-card">
         <h3>Crawlspace Theater</h3>
         <p>Kalamazoo, MI<br>Intimate theater venue hosting album release events and special blues performances.</p>
       </div>
-
       <div class="venue-card">
         <h3>Bronson Park / Arcadia Creek</h3>
-        <p>Downtown Kalamazoo<br>Outdoor home of the annual Kalamazoo Blues Festival. One of the most vibrant outdoor music venues in Southwest Michigan.</p>
+        <p>Downtown Kalamazoo<br>Outdoor home of the annual Kalamazoo Blues Festival — one of the most vibrant outdoor music venues in Southwest Michigan.</p>
       </div>
-
       <div class="venue-card">
         <h3>Your Venue Here</h3>
-        <p>Do you host live blues? KVBA partners with local venues to promote and grow the blues scene. <a href="mailto:info@kvba.org?subject=Venue Partnership" style="color:var(--blue);">Get in touch.</a></p>
+        <p>Do you host live blues? KVBA partners with local venues to promote the scene. <a href="mailto:kvba@kvba.org?subject=Venue Partnership" style="color:var(--blue);">Get in touch.</a></p>
       </div>
-
     </div>
   </div>
 </section>
@@ -200,10 +233,10 @@
       <div class="footer-col">
         <h4>Community</h4>
         <ul>
-          <li><a href="bands.html">Local Bands</a></li>
+          <li><a href="bands.html">Member Bands</a></li>
           <li><a href="bands.html#venues">Blues Venues</a></li>
-          <li><a href="mailto:info@kvba.org?subject=Band Listing Request">List Your Band</a></li>
-          <li><a href="mailto:info@kvba.org?subject=Venue Partnership">Venue Partnership</a></li>
+          <li><a href="membership.html">Join as a Band</a></li>
+          <li><a href="mailto:kayla@kvba.org?subject=Band Membership Assets">Send Band Assets</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -211,7 +244,7 @@
         <ul>
           <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
           <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="mailto:info@kvba.org">info@kvba.org</a></li>
+          <li><a href="mailto:kvba@kvba.org">kvba@kvba.org</a></li>
         </ul>
       </div>
     </div>
