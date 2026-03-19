@@ -149,6 +149,25 @@
     </div>
     <div class="events-grid reveal">
 
+      <!-- Spring Fling featured card -->
+      <button class="event-card" id="springFlingCard"
+              style="border-color:rgba(28,200,232,0.45); text-align:left; cursor:pointer; background:none; width:100%;">
+        <div style="min-width:82px; flex-shrink:0; overflow:hidden; align-self:stretch;">
+          <img src="assets/spring_fling_april2026.webp" alt="KVBA Spring Fling April 2026"
+               style="width:82px; height:100%; object-fit:cover; object-position:center top; display:block;" />
+        </div>
+        <div class="event-info" style="position:relative;">
+          <span style="position:absolute; top:0; right:0; background:#b44fc0; color:#fff;
+                       font-family:var(--heading); font-size:0.58rem; letter-spacing:0.18em;
+                       padding:0.18rem 0.55rem; border-radius:0 calc(var(--radius) - 1px) 0 4px;">🌸 SPRING FLING</span>
+          <h3>KVBA Spring Fling</h3>
+          <div class="event-meta">
+            <span class="time">⏱ April 2026</span>
+            <span style="font-size:0.8rem; color:var(--blue); margin-top:0.25rem; display:block;">Click to view poster →</span>
+          </div>
+        </div>
+      </button>
+
       <!-- Golf Outing featured card -->
       <a href="golf.html" class="event-card" style="border-color:rgba(28,200,232,0.45); text-decoration:none;">
         <div style="min-width:82px; flex-shrink:0; overflow:hidden; align-self:stretch;">
@@ -370,6 +389,36 @@
   </div>
 </footer>
 
+<!-- ─── SPRING FLING POSTER MODAL ─────────────────────────────────────────────── -->
+<div id="posterModal" style="
+  display:none; position:fixed; inset:0; z-index:9999;
+  background:rgba(0,0,0,0.92); align-items:center; justify-content:center;
+  padding:1.5rem;">
+  <button id="posterClose" aria-label="Close poster" style="
+    position:absolute; top:1.25rem; right:1.5rem;
+    background:none; border:none; color:#fff; font-size:2rem;
+    cursor:pointer; line-height:1; z-index:1;">✕</button>
+  <img src="assets/spring_fling_april2026.webp" alt="KVBA Spring Fling 2026 poster"
+       style="max-width:90vw; max-height:90vh; object-fit:contain; border-radius:8px;
+              box-shadow:0 8px 60px rgba(0,0,0,0.7);" />
+</div>
+
 <script src="assets/js/main.js"></script>
+<script>
+  // Spring Fling poster modal
+  const posterModal = document.getElementById('posterModal');
+  const posterClose = document.getElementById('posterClose');
+  document.getElementById('springFlingCard')?.addEventListener('click', () => {
+    posterModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  });
+  function closePosterModal() {
+    posterModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  posterClose?.addEventListener('click', closePosterModal);
+  posterModal?.addEventListener('click', e => { if (e.target === posterModal) closePosterModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePosterModal(); });
+</script>
 </body>
 </html>
