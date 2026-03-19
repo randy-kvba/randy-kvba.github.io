@@ -85,6 +85,24 @@
       .legacy-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
+    /* ── Bob photo frame ── */
+    .bob-photo-wrap {
+      position: relative;
+    }
+    .bob-photo-wrap img {
+      width: 100%; display: block;
+      border-radius: var(--radius);
+      border: 1px solid rgba(28,200,232,0.25);
+      box-shadow: 0 0 60px rgba(28,200,232,0.12), 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .bob-photo-caption {
+      margin-top: 0.85rem;
+      text-align: center;
+      font-style: italic;
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
     /* ── Contact card ── */
     .contact-card {
       background: var(--bg-3); border: 1px solid var(--border);
@@ -121,7 +139,7 @@
 </nav>
 
 <!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
-<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.55), rgba(8,8,8,0.98)), url('assets/images/received_749088378077921.jpeg'); background-size: cover; background-position: center;">
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.45), rgba(8,8,8,0.98)), url('assets/images/boogie-woogie-bob.webp'); background-size: cover; background-position: center top;">
   <div class="container">
     <span class="section-label">KVBA Education Fund</span>
     <h1>"Boogie Woogie" Bob Peters <span class="blue">Scholarship</span></h1>
@@ -144,10 +162,10 @@
         </div>
         <p style="color:var(--gray); font-size:0.9rem; font-style:italic;">— The Peters Family and KVBA Board of Directors</p>
       </div>
-      <div>
-        <img src="assets/images/Messenger_creation_C5F40A96-31F3-4BCE-A753-2F58A3DBD801.jpeg"
-             alt="Boogie Woogie Bob Peters — a life in music"
-             style="width:100%; border-radius:var(--radius); border:1px solid var(--border); display:block;" />
+      <div class="bob-photo-wrap">
+        <img src="assets/images/boogie-woogie-bob.webp"
+             alt="Boogie Woogie Bob Peters" />
+        <p class="bob-photo-caption">"Boogie Woogie" Bob Peters — blues musician, historian, and beloved Kalamazoo icon</p>
       </div>
     </div>
 
