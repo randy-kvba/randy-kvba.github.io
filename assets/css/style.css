@@ -42,8 +42,8 @@ h3 { font-size: clamp(1.3rem, 3vw, 2rem); }
 
 /* ─── LAYOUT ─────────────────────────────────────────────── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
-section    { padding: 6rem 0; }
-.section-header { text-align: center; margin-bottom: 4rem; }
+section    { padding: 4.5rem 0; }
+.section-header { text-align: center; margin-bottom: 2.5rem; }
 .section-header h2 { margin-bottom: 0.75rem; }
 .section-header p  { color: var(--light); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
 
@@ -224,7 +224,7 @@ section    { padding: 6rem 0; }
 }
 
 /* ─── FOOTER ─────────────────────────────────────────────── */
-footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 5rem 0 2rem; }
+footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 3.5rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-logo-img { height: 64px; width: auto; object-fit: contain; margin-bottom: 0.75rem; }
 .footer-brand p { color: var(--gray); font-size: 0.88rem; margin-top: 0.75rem; max-width: 280px; line-height: 1.6; }
@@ -242,7 +242,7 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 
 /* ─── PAGE HERO ─────────────────────────────────────────────── */
 .page-hero {
-  padding: calc(var(--nav-h) + 5rem) 0 4.5rem;
+  padding: calc(var(--nav-h) + 4rem) 0 3.5rem;
   background: linear-gradient(to bottom, var(--bg-2), var(--bg));
   border-bottom: 1px solid var(--border); text-align: center;
 }
@@ -305,7 +305,7 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 .perk-card p   { color: var(--light); font-size: 0.9rem; }
 
 /* ─── PRESERVE PAGE ─────────────────────────────────────────────── */
-.preserve-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; }
+.preserve-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 3.5rem; }
 .preserve-intro img { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius); }
 .preserve-intro-text h2 { margin-bottom: 1.5rem; }
 .preserve-intro-text p { color: var(--light); margin-bottom: 1rem; }
@@ -342,11 +342,11 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 .mission-block {
   background: linear-gradient(135deg, #0a1520 0%, var(--bg) 100%);
   border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 4rem; text-align: center; margin-bottom: 6rem;
+  padding: 3rem; text-align: center; margin-bottom: 3.5rem;
 }
 .mission-quote { font-family: var(--heading); font-size: clamp(1.8rem, 4vw, 3rem); color: var(--blue); margin-bottom: 1rem; }
 .mission-block p { color: var(--light); font-size: 1.05rem; max-width: 700px; margin: 0 auto; }
-.history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; }
+.history-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 3.5rem; }
 .history-text h2 { margin-bottom: 1.5rem; }
 .history-text p  { color: var(--light); margin-bottom: 1rem; }
 .history-img img { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius); }
@@ -374,6 +374,31 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 .lb-nav:hover { background: var(--blue-glow); color: var(--blue); }
 .lb-prev { left: 1rem; }
 .lb-next { right: 1rem; }
+
+/* ─── LIGHT SECTION VARIANT ─────────────────────────────────────────────── */
+/* Override CSS custom properties so all var() references invert automatically */
+.section-light {
+  --white:     #0f0f0f;
+  --light:     #2d2d2d;
+  --gray:      #5e5e5e;
+  --border:    rgba(0, 0, 0, 0.09);
+  --bg:        #f5f4f1;
+  --bg-2:      #eae9e6;
+  --bg-3:      #dddcda;
+  --blue:      #0881a0;
+  --blue-dark: #0e7490;
+  --blue-glow: rgba(8, 145, 178, 0.10);
+  background:  #f5f4f1;
+  color:       var(--white); /* explicit so children inherit dark text */
+}
+/* Elements with hardcoded dark backgrounds stay readable inside light sections */
+.section-light .award-callout,
+.section-light .mission-block {
+  --white: #ffffff;
+  --light: #cccccc;
+  --gray:  #888888;
+  color: var(--white);
+}
 
 /* ─── UTILITIES ─────────────────────────────────────────────── */
 .text-center   { text-align: center; }
