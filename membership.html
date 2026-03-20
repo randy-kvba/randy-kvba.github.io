@@ -12,18 +12,27 @@
   <style>
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
   </style>
 </head>
 <body>
 
 <!-- ─── NAVBAR ─────────────────────────────────────────────── -->
 <nav id="navbar">
+  <div class="nav-left">
   <div class="nav-logo">
     <a href="index.html">
       <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
     </a>
   </div>
+  <div class="nav-social">
+    <a href="https://facebook.com/Kzooblues" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/kzooblues/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+  </div>
+</div>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="events.html">Events</a></li>

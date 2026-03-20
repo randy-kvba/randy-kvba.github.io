@@ -66,12 +66,15 @@ section    { padding: 4.5rem 0; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-h); display: flex; align-items: center;
   justify-content: space-between; padding: 0 2rem;
-  transition: background 0.4s ease, box-shadow 0.4s ease;
-}
-#navbar.scrolled {
   background: rgba(8, 8, 8, 0.97); backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 var(--border);
+  transition: background 0.4s ease, box-shadow 0.4s ease;
 }
+/* nav-left: logo + social icons side by side */
+.nav-left { display: flex; align-items: center; gap: 1.25rem; }
+.nav-social { display: flex; gap: 0.65rem; align-items: center; }
+.nav-social a { color: rgba(255,255,255,0.5); transition: color var(--ease); display: flex; line-height: 0; }
+.nav-social a:hover { color: var(--blue); }
 .nav-logo a      { display: flex; align-items: center; }
 .nav-logo-img    { height: 52px; width: auto; object-fit: contain; display: block; }
 .nav-links { display: flex; align-items: center; gap: 1.75rem; }
