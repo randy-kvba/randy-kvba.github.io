@@ -216,12 +216,17 @@
       <div class="gallery-overlay"></div>
     </div>
   </div>
-  <!-- Lightbox -->
+  <div class="gallery-view-all">
+    <button class="btn btn-blue-outline" onclick="openLightbox(0)">View all photos &rarr;</button>
+  </div>
+  <!-- Lightbox with filmstrip -->
   <div id="lightbox">
     <button class="lb-close" title="Close">✕</button>
-    <button class="lb-nav lb-prev" title="Previous">‹</button>
+    <div class="lb-counter" id="lbCounter"></div>
+    <button class="lb-nav lb-prev" title="Previous">&#8249;</button>
     <img id="lightboxImg" src="" alt="Gallery image" />
-    <button class="lb-nav lb-next" title="Next">›</button>
+    <button class="lb-nav lb-next" title="Next">&#8250;</button>
+    <div class="lb-filmstrip" id="lbFilmstrip"></div>
   </div>
 </section>
 
