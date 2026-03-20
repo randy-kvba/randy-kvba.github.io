@@ -12,12 +12,52 @@ navToggle?.addEventListener('click', () => {
   const open = navLinks.classList.toggle('open');
   navToggle.textContent = open ? '✕' : '☰';
 });
+// Close mobile menu when a non-dropdown link is clicked
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks?.classList.remove('open');
-    if (navToggle) navToggle.textContent = '☰';
+    // Only close if NOT the parent trigger of a dropdown on mobile
+    if (window.innerWidth > 920) return;
+    const isDropdownParent = link.closest('.has-dropdown') &&
+                             !link.closest('.dropdown');
+    if (!isDropdownParent) {
+      navLinks?.classList.remove('open');
+      if (navToggle) navToggle.textContent = '☰';
+    }
   });
 });
+
+// ─── MOBILE DROPDOWN ACCORDION ─────────────────────────────────
+document.querySelectorAll('.has-dropdown > a').forEach(trigger => {
+  trigger.addEventListener('click', function (e) {
+    if (window.innerWidth > 920) return; // desktop uses hover
+    e.preventDefault();
+    const parent = this.closest('.has-dropdown');
+    const isOpen = parent.classList.contains('open');
+    // Close all other open dropdowns
+    document.querySelectorAll('.has-dropdown.open').forEach(el => {
+      if (el !== parent) el.classList.remove('open');
+    });
+    parent.classList.toggle('open', !isOpen);
+  });
+});
+
+// ─── AUTO-ACTIVE NAV LINK ──────────────────────────────────────
+(function () {
+  const page = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const href = (a.getAttribute('href') || '').split('#')[0];
+    if (!href || href === '#') return;
+    if (href === page || (page === '' && href === 'index.html')) {
+      a.classList.add('active');
+      // If inside a dropdown, highlight the parent top-level link too
+      const dropdownParent = a.closest('.dropdown');
+      if (dropdownParent) {
+        const parentLink = a.closest('.has-dropdown')?.querySelector(':scope > a');
+        if (parentLink) parentLink.classList.add('active');
+      }
+    }
+  });
+})();
 
 // ─── HERO SCROLL INDICATOR ───────────────────────────────────────────────
 document.querySelector('.hero-scroll')?.addEventListener('click', () => {

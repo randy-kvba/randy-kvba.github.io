@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blues Fest 2026 | Kalamazoo Valley Blues Association</title>
+  <meta name="description" content="Save the date — Blues Fest 2026 is coming July 10–11. More details coming soon from the Kalamazoo Valley Blues Association." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .fest-hero {
+      padding: calc(var(--nav-h) + 5rem) 2rem 5rem;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 30%, rgba(8,145,178,0.18) 0%, transparent 65%), var(--bg);
+      min-height: 72vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .fest-badge {
+      display: inline-block;
+      background: var(--blue); color: var(--bg);
+      font-family: var(--heading); letter-spacing: 0.18em;
+      font-size: 0.95rem; padding: 0.4rem 1.2rem; border-radius: 4px;
+      margin-bottom: 1.75rem;
+    }
+    .fest-title {
+      font-family: var(--heading); font-size: clamp(4rem, 10vw, 9rem);
+      line-height: 0.95; color: var(--white);
+      text-shadow: 0 2px 40px rgba(8,145,178,0.35);
+      margin: 0 0 0.3em;
+    }
+    .fest-year {
+      font-family: var(--heading); font-size: clamp(2.2rem, 6vw, 5rem);
+      color: var(--blue); letter-spacing: 0.08em;
+      margin: 0 0 2rem;
+    }
+    .fest-dates {
+      font-family: var(--heading); font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--light); letter-spacing: 0.12em;
+      margin-bottom: 2rem;
+    }
+    .fest-tagline {
+      font-size: 1.2rem; color: rgba(255,255,255,0.6);
+      max-width: 560px; line-height: 1.7; margin-bottom: 3rem;
+    }
+    .fest-cta-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .fest-divider {
+      width: 64px; height: 3px;
+      background: var(--blue); border-radius: 2px;
+      margin: 0 auto 3rem;
+    }
+    .fest-info {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 2.5rem 3rem; max-width: 680px; margin: 0 auto 5rem;
+      text-align: left;
+    }
+    .fest-info h3 {
+      font-family: var(--heading); font-size: 1.6rem; letter-spacing: 0.1em;
+      color: var(--blue); margin-bottom: 1rem;
+    }
+    .fest-info p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 0.75rem; }
+    .fest-info p:last-child { margin-bottom: 0; }
+    .fest-soon {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(8,145,178,0.12); border: 1px solid rgba(8,145,178,0.3);
+      border-radius: 50px; padding: 0.45rem 1.1rem;
+      font-size: 0.85rem; color: var(--blue); letter-spacing: 0.08em;
+      margin-bottom: 2rem;
+    }
+    .fest-soon::before { content: '●'; font-size: 0.5em; animation: blink 1.4s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    @media (max-width: 600px) {
+      .fest-info { padding: 1.75rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-left">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <div class="nav-social">
+    <a href="https://facebook.com/Kzooblues" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+    <a href="https://instagram.com/kzooblues/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+  </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="events.html">Events <span class="nav-arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="bluesfest.html">Blues Fest 2026</a></li>
+        <li><a href="golf.html">Golf Outing</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Support Us <span class="nav-arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="sponsorship.html">Sponsorship</a></li>
+        <li><a href="scholarship.html">Scholarship</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="#">Community <span class="nav-arrow">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="bands.html">Community Bands</a></li>
+        <li><a href="preserve.html">Preserve the Blues</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
+<section class="fest-hero">
+  <span class="fest-soon">Details Coming Soon</span>
+  <p class="fest-badge">🎸 KVBA Presents</p>
+  <h1 class="fest-title">Blues<br>Fest</h1>
+  <p class="fest-year">2026</p>
+  <div class="fest-divider"></div>
+  <p class="fest-dates">July 10 &amp; 11, 2026</p>
+  <p class="fest-tagline">Save the date — Blues Fest is back! Two days of live blues music in Kalamazoo. Full lineup, location, and ticketing information coming soon.</p>
+  <div class="fest-cta-group">
+    <a href="events.html" class="btn btn-outline">All Upcoming Events</a>
+    <a href="membership.html" class="btn btn-primary">Join KVBA</a>
+  </div>
+</section>
+
+<!-- ─── INFO CARD ─────────────────────────────────────────────── -->
+<section style="padding: 0 2rem 6rem; background: var(--bg);">
+  <div class="fest-info">
+    <h3>Stay in the Loop</h3>
+    <p>Blues Fest 2026 is shaping up to be our biggest event yet. We're booking artists, lining up food vendors, and finalizing the venue. Check back here for updates — or better yet, become a KVBA member to get announcements delivered straight to your inbox.</p>
+    <p>Want to sponsor Blues Fest? We'd love to have you. <a href="sponsorship.html" style="color:var(--blue);">View sponsorship opportunities →</a></p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer id="footer">
+  <div class="footer-inner container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA" style="height:48px;margin-bottom:1rem;" />
+        <p>Keeping the blues alive in Southwest Michigan since 1993.</p>
+        <div style="display:flex;gap:0.75rem;margin-top:1rem;">
+          <a href="https://facebook.com/Kzooblues" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);transition:color 0.2s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://instagram.com/kzooblues/" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.4);transition:color 0.2s" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="bluesfest.html">Blues Fest 2026</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Get Involved</h4>
+        <ul>
+          <li><a href="membership.html">Join KVBA</a></li>
+          <li><a href="sponsorship.html">Sponsorship</a></li>
+          <li><a href="scholarship.html">Scholarship</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com/Kzooblues" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com/kzooblues/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:kvba@kvba.org">kvba@kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="yr"></span> Kalamazoo Valley Blues Association. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
