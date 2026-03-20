@@ -181,7 +181,7 @@ section    { padding: 4.5rem 0; }
   overflow: hidden;
   max-height: calc(200px * 2 + 4px);
   max-width: 1200px;
-  margin: 0 2.5rem;
+  margin: 0 auto;
   border-radius: 8px;
 }
 .gallery-item     { overflow: hidden; cursor: pointer; position: relative; }
