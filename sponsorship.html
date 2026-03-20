@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsorship | Kalamazoo Valley Blues Association</title>
+  <meta name="description" content="Support the blues in Kalamazoo Valley. Sponsorship opportunities for the KVBA Blues Festival and community events." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    #navbar { background: rgba(8,8,8,0.97); backdrop-filter: blur(14px); box-shadow: 0 1px 0 var(--border); }
+
+    /* ── Tier buttons ── */
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    .tier-btn {
+      display: block;
+      background: linear-gradient(135deg, #061018 0%, #0a1f2e 100%);
+      border: 1px solid rgba(28,200,232,0.35);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      color: var(--white);
+    }
+    .tier-btn:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(8,145,178,0.2);
+    }
+    .tier-btn .tier-name {
+      font-family: var(--heading);
+      font-size: 1.4rem;
+      letter-spacing: 0.05em;
+      color: var(--blue);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .tier-btn .tier-cta {
+      font-size: 0.8rem;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Tiers image ── */
+    .tiers-image-wrap {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .tiers-image-wrap img {
+      max-width: 560px;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+
+    /* ── Celebration image ── */
+    .celebration-image-wrap {
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .celebration-image-wrap img {
+      max-width: 560px;
+      width: 100%;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <a href="index.html">
+      <img src="assets/images/logo-color.png" alt="Kalamazoo Valley Blues Association" class="nav-logo-img" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="preserve.html">Preserve the Blues</a></li>
+    <li><a href="bands.html">Community</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="golf.html">Golf Outing</a></li>
+    <li><a href="sponsorship.html" class="active">Sponsorship</a></li>
+    <li><a href="scholarship.html">Scholarship</a></li>
+    <li><a href="membership.html" class="nav-cta">Join KVBA</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+</nav>
+
+<!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.55), rgba(8,8,8,0.95)), url('https://kvba.org/wp-content/uploads/2024/05/2016-fest-WRKR-banner-on-stage-1-1.jpg'); background-size: cover; background-position: center 30%;">
+  <div class="container">
+    <span class="section-label">Support the Blues</span>
+    <h1>Become a <span class="blue">Sponsor</span></h1>
+    <p>Help keep live blues music alive in Southwest Michigan. Your sponsorship supports the festival, education programs, and the local blues community.</p>
+  </div>
+</div>
+
+<!-- ─── INTRO ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Why Sponsor</span>
+      <h2>31 Years of <span class="blue">Blues in Kalamazoo</span></h2>
+    </div>
+    <div class="history-grid reveal" style="max-width:800px; margin:0 auto;">
+      <p style="font-size:1.1rem; line-height:1.8; color:var(--light);">
+        Celebrating 31 years of bringing the blues to the zoo, it's time to get back to where it all started! Join us as we celebrate this great American art form on July 18–19, 2025 at Arcadia Creek Festival Site. There are several sponsorship opportunities listed below, followed by purchase links at the bottom of this page.
+      </p>
+      <p style="font-size:1rem; line-height:1.8; color:var(--gray); margin-top:1.5rem;">
+        Sponsoring KVBA puts your brand in front of thousands of blues fans and aligns your business with 31 years of community investment. From stage banners to program listings, we'll make sure your support is seen and appreciated.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SPONSORSHIP TIERS ─────────────────────────────────────────────── -->
+<section class="section-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Opportunities</span>
+      <h2>Sponsorship <span class="blue">Tiers</span></h2>
+      <p>Choose the level that's right for your business. Every tier includes recognition at our events and on our website.</p>
+    </div>
+
+    <div class="tiers-image-wrap reveal">
+      <img src="https://kvba.org/wp-content/uploads/2025/03/4-804x1024.png"
+           alt="KVBA Sponsorship tiers and benefits" />
+    </div>
+
+    <div class="reveal">
+      <p style="text-align:center; color:var(--gray); margin-bottom:0.5rem; font-size:0.9rem; text-transform:uppercase; letter-spacing:0.1em;">Select a tier to purchase</p>
+    </div>
+
+    <div class="tier-grid reveal">
+      <a href="https://square.link/u/dDLehDiY" target="_blank" rel="noopener" class="tier-btn">
+        <span class="tier-name">Blues Ambassador</span>
+        <span class="tier-cta">Purchase &rarr;</span>
+      </a>
+      <a href="https://square.link/u/XMHv1S5k" target="_blank" rel="noopener" class="tier-btn">
+        <span class="tier-name">Blues Traveler</span>
+        <span class="tier-cta">Purchase &rarr;</span>
+      </a>
+      <a href="https://square.link/u/71N6NFGa" target="_blank" rel="noopener" class="tier-btn">
+        <span class="tier-name">Blues Booster</span>
+        <span class="tier-cta">Purchase &rarr;</span>
+      </a>
+      <a href="https://square.link/u/HfoY3yop" target="_blank" rel="noopener" class="tier-btn">
+        <span class="tier-name">BB Blues Supporter</span>
+        <span class="tier-cta">Purchase &rarr;</span>
+      </a>
+      <a href="https://square.link/u/yH1QIVT4" target="_blank" rel="noopener" class="tier-btn">
+        <span class="tier-name">Friends of the Blues</span>
+        <span class="tier-cta">Purchase &rarr;</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── CELEBRATION IMAGE ─────────────────────────────────────────────── -->
+<section>
+  <div class="container">
+    <div class="celebration-image-wrap reveal">
+      <img src="https://kvba.org/wp-content/uploads/2025/07/Kalamazoo-Valley-Blues-Association-Celebrating-30-Years-804x1024.png"
+           alt="Kalamazoo Valley Blues Association — Celebrating 30 Years" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT CTA ─────────────────────────────────────────────── -->
+<section class="section-light">
+  <div class="container">
+    <div class="text-center reveal" style="background: var(--bg-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 3rem 2rem; max-width: 640px; margin: 0 auto;">
+      <span class="section-label">Questions?</span>
+      <h2 style="font-size:2rem; margin-bottom:0.75rem;">Get in <span class="blue">Touch</span></h2>
+      <p style="color:var(--light); margin-bottom:2rem;">Interested in a custom sponsorship package or have questions about opportunities? We'd love to hear from you.</p>
+      <a href="mailto:info@kvba.org?subject=Sponsorship Inquiry" class="btn btn-primary">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/images/logo-color.png" alt="KVBA Logo" class="footer-logo-img" />
+        <p>Kalamazoo Valley Blues Association<br>Keeping the Blues Alive in Southwest Michigan.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="preserve.html">Preserve the Blues</a></li>
+          <li><a href="bands.html">Community</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get Involved</h4>
+        <ul>
+          <li><a href="membership.html">Join KVBA</a></li>
+          <li><a href="sponsorship.html">Sponsorship</a></li>
+          <li><a href="scholarship.html">Scholarship</a></li>
+          <li><a href="golf.html">Golf Outing</a></li>
+          <li><a href="mailto:info@kvba.org?subject=Event Submission">Submit an Event</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="mailto:info@kvba.org">info@kvba.org</a></li>
+          <li><a href="https://kvba.org">kvba.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <div class="social-links">
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
