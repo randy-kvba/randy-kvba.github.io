@@ -73,8 +73,10 @@
 
     /* ── Register buttons ── */
     .register-strip {
-      background: var(--bg-2); border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border); padding: 3rem 0; text-align: center;
+      background: linear-gradient(135deg, #061828 0%, #0a1e30 100%);
+      border-top: 1px solid rgba(28,200,232,0.2);
+      border-bottom: 1px solid rgba(28,200,232,0.2);
+      padding: 3rem 0; text-align: center;
     }
     .register-strip h2 { margin-bottom: 0.5rem; }
     .register-strip p  { color: var(--light); margin-bottom: 2rem; font-size: 0.95rem; }
@@ -159,6 +161,17 @@
     .sponsor-card ul   { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
     .sponsor-card li   { font-size: 0.88rem; color: var(--light); display: flex; gap: 0.5rem; }
     .sponsor-card li::before { content: '★'; color: var(--blue); font-size: 0.65rem; flex-shrink: 0; margin-top: 3px; }
+
+    /* ── Light-section overrides ── */
+    .section-light .pricing-card.featured {
+      background: linear-gradient(160deg, #c8e4ed 0%, var(--bg-3) 100%);
+    }
+    .section-light .payment-note {
+      background: var(--bg-2); border-color: rgba(8,129,160,0.35);
+    }
+    .section-light .payment-note .address {
+      background: var(--bg-3); border-color: var(--border);
+    }
 
     /* ── Mail form / payment note ── */
     .payment-note {
@@ -294,7 +307,7 @@
 </div>
 
 <!-- ─── PRICING DETAIL ─────────────────────────────────────────────── -->
-<section id="registration">
+<section id="registration" class="section-light">
   <div class="container">
     <div class="section-header reveal">
       <span class="section-label">What's Included</span>
@@ -469,7 +482,7 @@
 </section>
 
 <!-- ─── MAIL-IN FORM ─────────────────────────────────────────────── -->
-<section id="mail" style="background:var(--bg-2); border-top:1px solid var(--border);">
+<section id="mail" class="section-light">
   <div class="container">
     <div class="payment-note reveal">
       <h3>📬 Register by <span class="blue">Mail</span></h3>
