@@ -15,23 +15,40 @@
 
     .apply-hero {
       padding: calc(var(--nav-h) + 3.5rem) 0 3rem;
-      background: radial-gradient(ellipse at 50% 0%, rgba(8,145,178,0.14) 0%, transparent 65%), var(--bg);
-      text-align: center; border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #080808 0%, #e5e0d8 100%);
+      text-align: center; border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .apply-hero .section-label { margin-bottom: 0.75rem; display: block; }
-    .apply-hero h1 { margin-bottom: 0.75rem; }
-    .apply-hero p  { color: var(--light); max-width: 560px; margin: 0 auto; }
+    .apply-hero h1 { margin-bottom: 0.75rem; color: #1a1614; }
+    .apply-hero h1 .blue { color: #0881a0; }
+    .apply-hero p  { color: #3a3530; max-width: 560px; margin: 0 auto; }
+
+    /* ── Light form body ── */
+    .apply-body {
+      /* mirrors .section-light variables */
+      --white:     #1a1614;
+      --light:     #3a3530;
+      --gray:      #6b645e;
+      --border:    rgba(0,0,0,0.12);
+      --bg:        #ffffff;
+      --bg-2:      #f0ebe3;
+      --bg-3:      #e5e0d8;
+      --blue:      #0881a0;
+      background: linear-gradient(180deg, #e5e0d8 0%, #d8d3cb 88%, #080808 100%);
+      color: var(--white);
+    }
 
     /* ── Form wrapper ── */
     .apply-wrap {
-      max-width: 780px; margin: 4rem auto 6rem; padding: 0 2rem;
+      max-width: 780px; margin: 0 auto; padding: 3.5rem 2rem 6rem;
     }
 
     /* ── Section cards ── */
     .form-section {
-      background: var(--bg-2); border: 1px solid var(--border);
+      background: var(--bg); border: 1px solid var(--border);
       border-radius: var(--radius); padding: 2.25rem 2.5rem;
       margin-bottom: 1.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     }
     .form-section-title {
       font-family: var(--heading); font-size: 1.35rem; letter-spacing: 0.1em;
@@ -52,34 +69,34 @@
     .field { display: flex; flex-direction: column; gap: 0.4rem; }
     .field label {
       font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: rgba(255,255,255,0.6); font-weight: 500;
+      color: #6b645e; font-weight: 600;
     }
     .field label .req { color: var(--blue); margin-left: 2px; }
     .field input,
     .field select,
     .field textarea {
-      background: var(--bg); border: 1px solid var(--border);
+      background: #fff; border: 1px solid rgba(0,0,0,0.18);
       border-radius: 5px; padding: 0.7rem 0.9rem;
-      color: var(--white); font-family: var(--body); font-size: 0.95rem;
+      color: #1a1614; font-family: var(--body); font-size: 0.95rem;
       transition: border-color 0.2s, box-shadow 0.2s;
       width: 100%;
     }
     .field input::placeholder,
-    .field textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .field textarea::placeholder { color: rgba(0,0,0,0.28); }
     .field input:focus,
     .field select:focus,
     .field textarea:focus {
       outline: none;
       border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(8,145,178,0.18);
+      box-shadow: 0 0 0 3px rgba(8,145,178,0.15);
     }
     .field select { appearance: none; cursor: pointer; }
     .field textarea { resize: vertical; min-height: 120px; }
     .field .hint {
-      font-size: 0.78rem; color: rgba(255,255,255,0.38); line-height: 1.5;
+      font-size: 0.78rem; color: #6b645e; line-height: 1.5;
     }
 
-    /* ── Checkbox/radio ── */
+    /* ── Checkbox ── */
     .field-check {
       display: flex; align-items: flex-start; gap: 0.65rem;
       margin-bottom: 0.75rem; cursor: pointer;
@@ -88,26 +105,20 @@
       width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
       accent-color: var(--blue); cursor: pointer;
     }
-    .field-check span { font-size: 0.9rem; color: var(--light); line-height: 1.5; }
+    .field-check span { font-size: 0.9rem; color: #3a3530; line-height: 1.5; }
 
     /* ── Submit ── */
-    .form-submit {
-      text-align: center; margin-top: 2rem;
-    }
-    .form-submit .btn {
-      font-size: 1.1rem; padding: 1rem 3rem; min-width: 240px;
-    }
-    .form-submit p {
-      margin-top: 1rem; font-size: 0.82rem; color: rgba(255,255,255,0.38);
-    }
+    .form-submit { text-align: center; margin-top: 2rem; }
+    .form-submit .btn { font-size: 1.1rem; padding: 1rem 3rem; min-width: 240px; }
+    .form-submit p { margin-top: 1rem; font-size: 0.82rem; color: #6b645e; }
 
     /* ── Success / Error messages ── */
     .form-msg {
       display: none; border-radius: var(--radius); padding: 1.25rem 1.5rem;
       margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;
     }
-    .form-msg.success { background: rgba(8,145,178,0.15); border: 1px solid rgba(8,145,178,0.4); color: #7dd3ea; }
-    .form-msg.error   { background: rgba(200,40,40,0.12); border: 1px solid rgba(200,40,40,0.35); color: #f87171; }
+    .form-msg.success { background: rgba(8,145,178,0.1); border: 1px solid rgba(8,145,178,0.4); color: #0881a0; }
+    .form-msg.error   { background: rgba(200,40,40,0.08); border: 1px solid rgba(200,40,40,0.3); color: #b91c1c; }
   </style>
 </head>
 <body>
@@ -170,6 +181,7 @@
 </div>
 
 <!-- ─── FORM ─────────────────────────────────────────────── -->
+<div class="apply-body">
 <div class="apply-wrap">
 
   <div class="form-msg success" id="formSuccess">
@@ -450,6 +462,7 @@
 
   </form>
 </div>
+</div><!-- /.apply-body -->
 
 <!-- ─── FOOTER ─────────────────────────────────────────────── -->
 <footer id="footer">
