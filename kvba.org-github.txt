@@ -1,0 +1,44 @@
+$ORIGIN KVBA.ORG.
+$TTL 3600
+KVBA.ORG.             IN  NS  NS1.BLUEHOST.COM.
+KVBA.ORG.             IN  NS  NS2.BLUEHOST.COM.
+
+; ── Website → GitHub Pages ───────────────────────────────────────
+KVBA.ORG.             IN  A  185.199.108.153
+KVBA.ORG.             IN  A  185.199.109.153
+KVBA.ORG.             IN  A  185.199.110.153
+KVBA.ORG.             IN  A  185.199.111.153
+WWW                   IN  CNAME  randy-kvba.github.io.
+
+; ── Email (unchanged — Google MX) ────────────────────────────────
+KVBA.ORG.             IN  MX  1  ASPMX.L.GOOGLE.COM.
+KVBA.ORG.             IN  MX  5  ALT2.ASPMX.L.GOOGLE.COM.
+KVBA.ORG.             IN  MX  10  ALT4.ASPMX.L.GOOGLE.COM.
+MAIL                  IN  A  162.241.219.128
+IMAP                  IN  CNAME  MAIL.KVBA.ORG.
+POP                   IN  CNAME  MAIL.KVBA.ORG.
+SMTP                  IN  CNAME  MAIL.KVBA.ORG.
+
+; ── Email client auto-discovery (unchanged) ──────────────────────
+AUTOCONFIG            IN  A  162.241.219.128
+AUTODISCOVER          IN  A  162.241.219.128
+_AUTODISCOVER._TCP.KVBA.ORG.  IN  SRV  0  0  14400  CPANELEMAILDISCOVERY.CPANEL.NET.
+
+; ── DKIM & SPF (unchanged) ───────────────────────────────────────
+DEFAULT._DOMAINKEY    IN  TXT  v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuDVVoolqmwytVQQkzMJ54UMYmrrk7UspO+cVHSZzUnnZ5z1a0D9TnVTAQamGUJLV+NCNLlcyc8OicZr0nUXd6qi990IctLV+v3yEHr/fkNjq45FimC0vtpHkcqRT6j1FNXg5/SPNeJu9Mg4gCq9jOmqUfwhekhS6Xsr3d5ZM57ExcH5Q79FlWVq1cZL9eW9W3T/0TIlY+oeu7GP4Wzx8CrwbMP+Ts2m/m/6TRr4noF5YMMqifc45Ke/H84VWIkpafp5lghSfFNDhK+8REj/DBoW5Q8Jq5Ww9bbNsbOoXFBfYeRXJZyXDdtvXV4ubIEyyTCudNrlE+voKUiEuqrDyxQIDAQAB;
+KVBA.ORG.             IN  TXT  v=spf1 a mx include:websitewelcome.com ~all
+
+; ── SSL cert validation (unchanged) ─────────────────────────────
+54910BE37E320F75DEC5BA11355EDDD2  IN  CNAME  DFF8FB67A63EBD2987ACACFEEF771323836F78AB.COMODOCA.COM.
+54910BE37E320F75DEC5BA11355EDDD2.WWW  IN  CNAME  DFF8FB67A63EBD2987ACACFEEF771323836F78AB.COMODOCA.COM.
+_54910BE37E320F75DEC5BA11355EDDD2  IN  CNAME  415F1FACC6A10322CCC031713AB646DF.2FA4F206441823CC381E8CF7EAABCC11.COMODOCA.COM.
+_54910BE37E320F75DEC5BA11355EDDD2.WWW  IN  CNAME  415F1FACC6A10322CCC031713AB646DF.2FA4F206441823CC381E8CF7EAABCC11.COMODOCA.COM.
+
+; ── Bluehost control panel (unchanged) ───────────────────────────
+LOCALHOST             IN  A  127.0.0.1
+WEBDISK               IN  A  162.241.219.128
+WHM                   IN  A  162.241.219.128
+CPANEL                IN  CNAME  KVBA.ORG.
+FTP                   IN  CNAME  KVBA.ORG.
+WEBMAIL               IN  CNAME  KVBA.ORG.
+_CPANEL-DCV-TEST-RECORD  IN  TXT  _cpanel-dcv-test-record=jaCN3V7zs5pB0OD5qVXlhkX9Mc2rMbiokQOrEhjFq3G59SAsHKgxBdVkB9sKkshS
