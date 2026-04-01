@@ -261,3 +261,63 @@ if (reveals.length) {
     }
   });
 }());
+
+// ─── GA4 EVENT TRACKING ───────────────────────────────────────────────────────
+// Fires named GA4 events for high-value clicks so you can see in Analytics:
+//   • which email addresses people try to reach
+//   • which files they download (golf registration, 990s, etc.)
+//   • which Square payment tier buttons they click
+(function () {
+  function gaSend(eventName, params) {
+    if (typeof gtag !== 'function') return;
+    gtag('event', eventName, params);
+  }
+
+  // ── Mailto clicks ──────────────────────────────────────────────────────────
+  document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', () => {
+      const email = link.getAttribute('href').replace(/^mailto:/i, '').split('?')[0];
+      gaSend('mailto_click', { email_address: email });
+    });
+  });
+
+  // ── File downloads (.doc, .pdf, .docx, .xls, .xlsx, .zip) ─────────────────
+  document.querySelectorAll('a[download], a[href]').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    if (/\.(pdf|docx?|xlsx?|zip|csv)(\?|$)/i.test(href)) {
+      link.addEventListener('click', () => {
+        const fileName = href.split('/').pop().split('?')[0];
+        gaSend('file_download', {
+          file_name: fileName,
+          link_url:  href
+        });
+      });
+    }
+  });
+
+  // ── Square payment link clicks ─────────────────────────────────────────────
+  document.querySelectorAll('a[href*="square.link"], a[href*="squareup.com"]').forEach(link => {
+    link.addEventListener('click', () => {
+      // Use the visible label (tier name) as the item identifier
+      const label = link.querySelector('.tier-name')?.textContent.trim()
+                 || link.textContent.trim()
+                 || 'Unknown tier';
+      gaSend('purchase_intent', {
+        item_name: label,
+        link_url:  link.getAttribute('href')
+      });
+    });
+  });
+
+  // ── Outbound link clicks (non-Square external links) ──────────────────────
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    if (link.hostname === location.hostname) return;          // skip internal
+    if (/square\.link|squareup\.com/.test(link.href)) return; // already tracked above
+    link.addEventListener('click', () => {
+      gaSend('outbound_click', {
+        link_url:  link.href,
+        link_text: link.textContent.trim().slice(0, 100)
+      });
+    });
+  });
+}());
