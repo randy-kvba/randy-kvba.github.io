@@ -61,6 +61,72 @@
       text-decoration: underline;
     }
     .tribute-obit:hover { opacity: 0.8; }
+    /* ── Board member bio modal ── */
+    .board-card.has-bio { cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+    .board-card.has-bio:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(28,200,232,0.18); border-color: var(--blue); }
+    .board-card.has-bio .bio-hint {
+      font-size: 0.78rem; color: var(--blue); margin-top: 0.5rem;
+      letter-spacing: 0.06em; opacity: 0.75;
+    }
+    .board-card.has-bio:hover .bio-hint { opacity: 1; }
+
+    /* Modal overlay */
+    #boardModal {
+      display: none; position: fixed; inset: 0; z-index: 8000;
+      background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center; padding: 1.5rem;
+    }
+    #boardModal.open { display: flex; }
+    .board-modal-box {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 16px; max-width: 560px; width: 100%;
+      padding: 2.5rem 2.5rem 2rem;
+      position: relative;
+      animation: modalIn 0.22s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(18px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .board-modal-close {
+      position: absolute; top: 1rem; right: 1.1rem;
+      background: none; border: none; cursor: pointer;
+      color: var(--gray); font-size: 1.5rem; line-height: 1;
+      transition: color 0.2s;
+    }
+    .board-modal-close:hover { color: var(--white); }
+    .board-modal-header {
+      display: flex; align-items: center; gap: 1.4rem; margin-bottom: 1.5rem;
+    }
+    .board-modal-header img {
+      width: 80px; height: 80px; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 2px solid var(--blue); flex-shrink: 0;
+    }
+    .board-modal-header .modal-name {
+      font-family: var(--heading); font-size: 1.8rem; line-height: 1.1; margin-bottom: 0.2rem;
+    }
+    .board-modal-header .modal-role {
+      color: var(--blue); font-size: 0.9rem; text-transform: uppercase;
+      letter-spacing: 0.12em; margin-bottom: 0.2rem;
+    }
+    .board-modal-header .modal-since {
+      color: var(--gray); font-size: 0.85rem;
+    }
+    .board-modal-body p {
+      color: var(--light); line-height: 1.8; font-size: 0.97rem; margin-bottom: 0.9rem;
+    }
+    .board-modal-body p:last-child { margin-bottom: 0; }
+    .board-modal-footer {
+      margin-top: 1.5rem; padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+    .board-modal-footer a {
+      color: var(--blue); font-size: 0.9rem; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .board-modal-footer a:hover { text-decoration: underline; }
+
     /* ── Collapsible bio ── */
     .bio-preview { margin-bottom: 0; }
     .bio-full { display: none; }
@@ -181,11 +247,12 @@
         <p>KVBA is governed by a volunteer board of dedicated blues community members. <a href="mailto:kvba@kvba.org" style="color:var(--blue);">Contact us</a> to learn about board opportunities.</p>
       </div>
       <div class="board-grid reveal">
-        <div class="board-card">
+        <div class="board-card has-bio" onclick="document.getElementById('boardModal').classList.add('open')" role="button" tabindex="0" aria-label="View Mike Depoian bio">
           <img src="assets/images/mike-depoian.jpg" alt="Mike Depoian" class="board-avatar-photo" />
           <div class="name">Mike Depoian</div>
           <div class="role">Board President</div>
           <div style="color:var(--gray);font-size:0.82rem;margin-top:0.4rem;">President since 2016</div>
+          <div class="bio-hint">View Bio ›</div>
         </div>
         <div class="board-card">
           <div class="board-avatar">VP</div>
@@ -440,6 +507,48 @@
     </div>
   </div>
 </footer>
+
+
+<!-- ── Mike Depoian Bio Modal ────────────────────────────── -->
+<div id="boardModal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+  <div class="board-modal-box">
+    <button class="board-modal-close" onclick="document.getElementById('boardModal').classList.remove('open')" aria-label="Close">&times;</button>
+    <div class="board-modal-header">
+      <img src="assets/images/mike-depoian.jpg" alt="Mike Depoian" />
+      <div>
+        <div class="modal-name" id="modalName">Mike Depoian</div>
+        <div class="modal-role">Board President</div>
+        <div class="modal-since">KVBA President since 2016</div>
+      </div>
+    </div>
+    <div class="board-modal-body">
+      <p>Mike Depoian has served as President of the Kalamazoo Valley Blues Association since 2016, guiding the organization through a period of sustained growth and community impact. Under his leadership, KVBA has expanded its annual Blues Festival, deepened its ties with Southwest Michigan venues and artists, and strengthened the scholarship and education programs that carry the blues forward.</p>
+      <p>By day, Mike is a sales leader, coach, and strategist based in Kalamazoo, MI. He holds a degree from the University of Notre Dame's Mendoza College of Business and is a Trio Certified Coach, bringing that same focus on building high-performing teams and long-term vision to everything he does at KVBA.</p>
+      <p>Mike leads KVBA entirely as a volunteer — a reflection of the genuine passion for blues music and community that drives the whole organization.</p>
+    </div>
+    <div class="board-modal-footer">
+      <a href="https://www.linkedin.com/in/mdepoian/" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        View LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Close modal on backdrop click
+  document.getElementById('boardModal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('boardModal').classList.remove('open');
+  });
+  // Keyboard activation for the card
+  document.querySelector('.board-card.has-bio').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') document.getElementById('boardModal').classList.add('open');
+  });
+</script>
 
 <script src="assets/js/main.js"></script>
 <script>
