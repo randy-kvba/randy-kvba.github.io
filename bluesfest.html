@@ -83,6 +83,160 @@
     @media (max-width: 600px) {
       .fest-info { padding: 1.75rem 1.5rem; }
     }
+
+    /* ── Schedule section ── */
+    .fest-schedule {
+      background: var(--bg);
+      padding: 5rem 2rem 6rem;
+    }
+    .fest-schedule .sched-heading {
+      text-align: center;
+      font-family: var(--heading);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      letter-spacing: 0.12em;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .fest-schedule .sched-sub {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Day tabs */
+    .sched-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 3rem;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sched-tab {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.2rem;
+      transition: background 0.2s;
+    }
+    .sched-tab:first-child { border-right: 1px solid rgba(255,255,255,0.12); }
+    .sched-tab.active { background: var(--blue); }
+    .sched-tab-day {
+      font-family: var(--heading);
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      line-height: 1;
+    }
+    .sched-tab.active .sched-tab-day { color: var(--bg); }
+    .sched-tab-date {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .sched-tab.active .sched-tab-date { color: rgba(10,20,24,0.7); }
+
+    /* Day panel */
+    .sched-day { display: none; max-width: 700px; margin: 0 auto; }
+    .sched-day.active { display: block; }
+    .sched-venue {
+      text-align: center;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Act rows */
+    .sched-act {
+      display: grid;
+      grid-template-columns: 130px 2px 1fr;
+      align-items: center;
+      gap: 0 1.5rem;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: background 0.15s;
+    }
+    .sched-act:last-child { border-bottom: none; }
+    .sched-act.headliner {
+      background: rgba(28,200,232,0.06);
+      border-radius: 8px;
+      padding: 1.4rem 1.2rem;
+      margin-top: 0.5rem;
+      border-bottom: none;
+      border: 1px solid rgba(28,200,232,0.22);
+    }
+    .sched-time {
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.45);
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .sched-act.headliner .sched-time { color: var(--blue); opacity: 0.85; }
+    .sched-bar {
+      width: 2px;
+      height: 36px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 2px;
+      justify-self: center;
+    }
+    .sched-act.headliner .sched-bar {
+      background: var(--blue);
+      height: 48px;
+    }
+    .sched-band-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .sched-band {
+      font-family: var(--heading);
+      font-size: clamp(1.35rem, 3vw, 1.8rem);
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1;
+    }
+    .sched-act.headliner .sched-band {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      color: var(--white);
+    }
+    .headliner-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--bg);
+      font-family: var(--heading);
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      padding: 0.22rem 0.65rem;
+      border-radius: 3px;
+      vertical-align: middle;
+      position: relative;
+      top: -2px;
+    }
+
+    @media (max-width: 540px) {
+      .sched-act {
+        grid-template-columns: 100px 2px 1fr;
+        gap: 0 1rem;
+      }
+      .sched-time { font-size: 0.75rem; }
+    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRCHQHKWJD"></script>
@@ -145,25 +299,129 @@
 
 <!-- ─── HERO ─────────────────────────────────────────────────── -->
 <section class="fest-hero">
-  <span class="fest-soon">Details Coming Soon</span>
   <p class="fest-badge">🎸 KVBA Presents</p>
   <h1 class="fest-title">Blues<br>Fest</h1>
   <p class="fest-year">2026</p>
   <div class="fest-divider"></div>
-  <p style="font-family:var(--heading);font-size:clamp(1rem,2.5vw,1.4rem);letter-spacing:0.2em;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:0.4rem;">Save the Date!</p>
-  <p class="fest-dates">July 10 &amp; 11, 2026</p>
-  <p class="fest-tagline">Save the date — Blues Fest is back! Two days of live blues music at <a href="https://www.facebook.com/p/Old-Dog-Tavern-61581095594378/" target="_blank" rel="noopener" style="color:var(--blue);">Old Dog Tavern</a> in Kalamazoo, MI. Check back soon for the announcement of the exciting lineup!</p>
+  <p style="font-family:var(--heading);font-size:clamp(1rem,2.5vw,1.4rem);letter-spacing:0.2em;color:rgba(255,255,255,0.55);text-transform:uppercase;margin-bottom:0.4rem;">July 10 &amp; 11 · Old Dog Tavern</p>
+  <p class="fest-dates">Kalamazoo, MI</p>
+  <p class="fest-tagline">Two nights of world-class blues. Headlined by <strong style="color:var(--white);">JR Clark</strong> on Friday and <strong style="color:var(--white);">Carolyn Wonderland</strong> on Saturday.</p>
   <div class="fest-cta-group">
-    <a href="events.html" class="btn btn-outline">All Upcoming Events</a>
-    <a href="membership.html" class="btn btn-primary">Join KVBA</a>
+    <a href="#schedule" class="btn btn-primary">View Schedule ↓</a>
+    <a href="membership.html" class="btn btn-outline">Join KVBA</a>
   </div>
 </section>
+
+<!-- ─── SCHEDULE ──────────────────────────────────────────────── -->
+<section class="fest-schedule" id="schedule">
+  <div class="container">
+    <div class="sched-heading reveal">LINEUP &amp; SCHEDULE</div>
+    <p class="sched-sub reveal">Old Dog Tavern · Kalamazoo, MI</p>
+    <div class="fest-divider reveal"></div>
+
+    <!-- Day tabs -->
+    <div class="sched-tabs reveal">
+      <button class="sched-tab active" onclick="switchDay('fri')" id="tab-fri">
+        <span class="sched-tab-day">Friday</span>
+        <span class="sched-tab-date">July 10</span>
+      </button>
+      <button class="sched-tab" onclick="switchDay('sat')" id="tab-sat">
+        <span class="sched-tab-day">Saturday</span>
+        <span class="sched-tab-date">July 11</span>
+      </button>
+    </div>
+
+    <!-- ── Friday July 10 ── -->
+    <div class="sched-day active reveal" id="day-fri">
+      <div class="sched-venue">Doors Open · Show Starts 5:00 PM</div>
+
+      <div class="sched-act">
+        <div class="sched-time">5:00 – 6:00</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Blueback</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">6:15 – 7:15</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Lisa Chilton Band</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">7:30 – 8:30</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Blue &amp; The Ravens</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">8:45 – 9:45</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Asamu Johnson &amp; Blues Assoc.</div></div>
+      </div>
+      <div class="sched-act headliner">
+        <div class="sched-time">10:00 – 11:00</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap">
+          <div class="sched-band">JR Clark</div>
+          <span class="headliner-badge">HEADLINER</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Saturday July 11 ── -->
+    <div class="sched-day reveal" id="day-sat">
+      <div class="sched-venue">Doors Open · Show Starts 1:00 PM</div>
+
+      <div class="sched-act">
+        <div class="sched-time">1:00 – 2:00</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Resurrection Blues Band</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">2:30 – 3:45</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Madlyn &amp; The Hunters</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">4:15 – 5:15</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Out of Favor Boys</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">5:45 – 7:00</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Mississippi Heat</div></div>
+      </div>
+      <div class="sched-act">
+        <div class="sched-time">7:30 – 8:45</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap"><div class="sched-band">Wayne Baker Brooks</div></div>
+      </div>
+      <div class="sched-act headliner">
+        <div class="sched-time">9:15 – 10:45</div>
+        <div class="sched-bar"></div>
+        <div class="sched-band-wrap">
+          <div class="sched-band">Carolyn Wonderland</div>
+          <span class="headliner-badge">HEADLINER</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+function switchDay(day) {
+  document.querySelectorAll('.sched-day').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.sched-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('day-' + day).classList.add('active');
+  document.getElementById('tab-' + day).classList.add('active');
+}
+</script>
 
 <!-- ─── INFO CARD ─────────────────────────────────────────────── -->
 <section class="fest-light-section">
   <div class="fest-info">
-    <h3>Stay in the Loop</h3>
-    <p>Blues Fest 2026 is coming to <a href="https://www.facebook.com/p/Old-Dog-Tavern-61581095594378/" target="_blank" rel="noopener" style="color:var(--blue);">Old Dog Tavern</a> in Kalamazoo, MI — and it's shaping up to be our biggest event yet. Check back soon for the announcement of the exciting lineup, or become a KVBA member to get updates delivered straight to your inbox.</p>
+    <h3>Blues Fest 2026</h3>
+    <p><strong>July 10 &amp; 11</strong> at <a href="https://www.facebook.com/p/Old-Dog-Tavern-61581095594378/" target="_blank" rel="noopener" style="color:var(--blue);">Old Dog Tavern</a>, Kalamazoo, MI. Two full nights of blues, featuring 11 artists across both days — headlined by JR Clark on Friday and Carolyn Wonderland on Saturday.</p>
+    <p>KVBA members enjoy exclusive perks and help make events like this possible. <a href="membership.html" style="color:var(--blue);">Join KVBA →</a></p>
     <p>Want to sponsor Blues Fest? We'd love to have you. <a href="sponsorship.html" style="color:var(--blue);">View sponsorship opportunities →</a></p>
   </div>
 </section>
