@@ -538,6 +538,40 @@
   </div>
 </div>
 
+<script>
+  // Close modals on backdrop click
+  document.getElementById('boardModal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+  document.getElementById('boardModalTreasurer').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      document.getElementById('boardModal').classList.remove('open');
+      document.getElementById('boardModalTreasurer').classList.remove('open');
+    }
+  });
+  // Keyboard activation for bio cards
+  document.querySelectorAll('.board-card.has-bio').forEach(function(card) {
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') card.click();
+    });
+  });
+</script>
+
+<script src="assets/js/main.js"></script>
+<script>
+function toggleBio(bioId, toggleId) {
+  const bio    = document.getElementById(bioId);
+  const toggle = document.getElementById(toggleId);
+  const open   = bio.classList.toggle('open');
+  toggle.classList.toggle('open', open);
+  toggle.innerHTML = `<span class="arrow">&#9654;</span> ${open ? 'Read less' : 'Read more'}`;
+}
+</script>
+
 <!-- ── Larry Face Bio Modal ────────────────────────────── -->
 <div id="boardModalTreasurer" role="dialog" aria-modal="true" aria-labelledby="modalNameTreasurer">
   <div class="board-modal-box">
@@ -549,4 +583,19 @@
         <div class="modal-role">Board Treasurer</div>
       </div>
     </div>
-    <d
+    <div class="board-modal-body">
+      <p>Larry Face brings 25 years of experience as a Leadership Coach and Trainer to his role as KVBA Board Treasurer. Having worked with municipalities, nonprofits, and hospitals throughout his career, he understands what it takes to build strong organizations — and channels that expertise into helping KVBA fulfill its mission.</p>
+      <p>A passionate blues advocate, Larry makes an annual pilgrimage to Clarksdale, Mississippi — widely considered the birthplace of the blues — and attends festivals throughout the year. His love for the music grew from recognizing how deeply the blues runs through rock and other genres; Eric Clapton and the Allman Brothers rank among his all-time favorites.</p>
+      <p>Larry grew up in Parchment and returned to the Kalamazoo area a couple of years ago after more than two decades in the Sarasota, Florida region, where he still spends his winters. Wanting to give back through a music-focused organization after coming home, he found KVBA — and the chance to work alongside incredible people keeping the blues alive in Southwest Michigan.</p>
+    </div>
+    <div class="board-modal-footer" style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+      <a href="https://www.linkedin.com/in/larryface/" target="_blank" rel="noopener">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn Profile
+      </a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
