@@ -71,12 +71,14 @@
     .board-card.has-bio:hover .bio-hint { opacity: 1; }
 
     /* Modal overlay */
-    #boardModal {
+    #boardModal,
+    #boardModalTreasurer {
       display: none; position: fixed; inset: 0; z-index: 8000;
       background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
       align-items: center; justify-content: center; padding: 1.5rem;
     }
-    #boardModal.open { display: flex; }
+    #boardModal.open,
+    #boardModalTreasurer.open { display: flex; }
     .board-modal-box {
       background: var(--bg-2); border: 1px solid var(--border);
       border-radius: 16px; max-width: 560px; width: 100%;
@@ -552,5 +554,4 @@
     }
   });
   // Keyboard activation for cards
-  document.querySelectorAll('.board-card.has-bio').forEach(function(card) {
-    card.addEventListener('keyd
+  document.querySelectorAll('.board-card.has-bio')
