@@ -71,12 +71,14 @@
     .board-card.has-bio:hover .bio-hint { opacity: 1; }
 
     /* Modal overlay */
-    #boardModal {
+    #boardModal,
+    #boardModalTreasurer {
       display: none; position: fixed; inset: 0; z-index: 8000;
       background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);
       align-items: center; justify-content: center; padding: 1.5rem;
     }
-    #boardModal.open { display: flex; }
+    #boardModal.open,
+    #boardModalTreasurer.open { display: flex; }
     .board-modal-box {
       background: var(--bg-2); border: 1px solid var(--border);
       border-radius: 16px; max-width: 560px; width: 100%;
@@ -264,10 +266,11 @@
           <div class="name">Secretary</div>
           <div class="role">Board Secretary</div>
         </div>
-        <div class="board-card">
-          <div class="board-avatar">T</div>
-          <div class="name">Treasurer</div>
+        <div class="board-card has-bio" onclick="document.getElementById('boardModalTreasurer').classList.add('open')" role="button" tabindex="0" aria-label="View Larry Face bio">
+          <img src="assets/images/Larry Face headshot.jpg" alt="Larry Face" class="board-avatar-photo" />
+          <div class="name">Larry Face</div>
           <div class="role">Board Treasurer</div>
+          <div class="bio-hint">View Bio ›</div>
         </div>
         <div class="board-card">
           <div class="board-avatar">D</div>
@@ -535,30 +538,15 @@
   </div>
 </div>
 
-<script>
-  // Close modal on backdrop click
-  document.getElementById('boardModal').addEventListener('click', function(e) {
-    if (e.target === this) this.classList.remove('open');
-  });
-  // Close on Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') document.getElementById('boardModal').classList.remove('open');
-  });
-  // Keyboard activation for the card
-  document.querySelector('.board-card.has-bio').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') document.getElementById('boardModal').classList.add('open');
-  });
-</script>
-
-<script src="assets/js/main.js"></script>
-<script>
-function toggleBio(bioId, toggleId) {
-  const bio    = document.getElementById(bioId);
-  const toggle = document.getElementById(toggleId);
-  const open   = bio.classList.toggle('open');
-  toggle.classList.toggle('open', open);
-  toggle.innerHTML = `<span class="arrow">&#9654;</span> ${open ? 'Read less' : 'Read more'}`;
-}
-</script>
-</body>
-</html>
+<!-- ── Larry Face Bio Modal ────────────────────────────── -->
+<div id="boardModalTreasurer" role="dialog" aria-modal="true" aria-labelledby="modalNameTreasurer">
+  <div class="board-modal-box">
+    <button class="board-modal-close" onclick="document.getElementById('boardModalTreasurer').classList.remove('open')" aria-label="Close">&times;</button>
+    <div class="board-modal-header">
+      <img src="assets/images/Larry Face headshot.jpg" alt="Larry Face" />
+      <div>
+        <div class="modal-name" id="modalNameTreasurer">Larry Face</div>
+        <div class="modal-role">Board Treasurer</div>
+      </div>
+    </div>
+    <d
