@@ -264,10 +264,11 @@
           <div class="name">Secretary</div>
           <div class="role">Board Secretary</div>
         </div>
-        <div class="board-card">
-          <div class="board-avatar">T</div>
-          <div class="name">Treasurer</div>
+        <div class="board-card has-bio" onclick="document.getElementById('boardModalTreasurer').classList.add('open')" role="button" tabindex="0" aria-label="View Larry bio">
+          <img src="assets/images/larry-treasurer.jpg" alt="Larry, Board Treasurer" class="board-avatar-photo" />
+          <div class="name">Larry</div>
           <div class="role">Board Treasurer</div>
+          <div class="bio-hint">View Bio ›</div>
         </div>
         <div class="board-card">
           <div class="board-avatar">D</div>
@@ -540,25 +541,16 @@
   document.getElementById('boardModal').addEventListener('click', function(e) {
     if (e.target === this) this.classList.remove('open');
   });
+  document.getElementById('boardModalTreasurer').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
   // Close on Escape key
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') document.getElementById('boardModal').classList.remove('open');
+    if (e.key === 'Escape') {
+      document.getElementById('boardModal').classList.remove('open');
+      document.getElementById('boardModalTreasurer').classList.remove('open');
+    }
   });
-  // Keyboard activation for the card
-  document.querySelector('.board-card.has-bio').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') document.getElementById('boardModal').classList.add('open');
-  });
-</script>
-
-<script src="assets/js/main.js"></script>
-<script>
-function toggleBio(bioId, toggleId) {
-  const bio    = document.getElementById(bioId);
-  const toggle = document.getElementById(toggleId);
-  const open   = bio.classList.toggle('open');
-  toggle.classList.toggle('open', open);
-  toggle.innerHTML = `<span class="arrow">&#9654;</span> ${open ? 'Read less' : 'Read more'}`;
-}
-</script>
-</body>
-</html>
+  // Keyboard activation for cards
+  document.querySelectorAll('.board-card.has-bio').forEach(function(card) {
+    card.addEventListener('keydown'
