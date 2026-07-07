@@ -460,6 +460,100 @@
       }
       .sched-time { font-size: 0.75rem; }
     }
+
+    /* ── Know Before You Go ── */
+    .fest-know {
+      background: var(--bg-2);
+      padding: 5rem 2rem 6rem;
+      border-top: 1px solid rgba(28,200,232,0.12);
+    }
+    .know-label {
+      display: block; text-align: center;
+      font-family: var(--heading); font-size: 0.85rem; letter-spacing: 0.22em;
+      color: var(--blue); text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .know-heading {
+      text-align: center;
+      font-family: var(--heading);
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      letter-spacing: 0.12em;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .know-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .know-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 2.25rem;
+    }
+    .know-card-title {
+      font-family: var(--heading);
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .know-list { list-style: none; margin: 0; padding: 0; }
+    .know-list li {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.98rem; line-height: 1.55;
+    }
+    .know-list li:last-child { border-bottom: none; }
+    .know-icon { flex-shrink: 0; font-size: 1.15rem; line-height: 1.4; }
+    .know-parking-warning {
+      background: rgba(28,200,232,0.08);
+      border: 1px solid rgba(28,200,232,0.25);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .know-parking-warning strong { color: var(--blue); }
+    .know-parking-sub {
+      font-family: var(--heading);
+      font-size: 0.8rem; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 0.75rem;
+    }
+    .know-parking-list { list-style: none; margin: 0; padding: 0; }
+    .know-parking-list li {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 0.65rem 0;
+    }
+    .know-parking-list li:last-child { border-bottom: none; }
+    .know-parking-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 1rem; color: inherit; text-decoration: none;
+    }
+    a.know-parking-row:hover .know-parking-name { color: var(--blue); }
+    .know-parking-name { color: rgba(255,255,255,0.85); font-size: 0.98rem; }
+    .know-parking-addr {
+      color: rgba(255,255,255,0.45); font-size: 0.85rem;
+      white-space: nowrap; text-align: right;
+    }
+    @media (max-width: 800px) {
+      .know-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    @media (max-width: 480px) {
+      .know-card { padding: 1.5rem; }
+      .know-parking-row { flex-direction: column; align-items: flex-start; gap: 0.15rem; }
+    }
   </style>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRCHQHKWJD"></script>
@@ -677,6 +771,76 @@
 </section>
 
 
+
+<!-- ─── KNOW BEFORE YOU GO ─────────────────────────────────────── -->
+<section class="fest-know" id="know-before-you-go">
+  <div class="container">
+    <div class="know-label reveal">Plan Ahead</div>
+    <div class="know-heading reveal">KNOW BEFORE YOU GO</div>
+    <div class="fest-divider reveal"></div>
+
+    <div class="know-grid">
+      <!-- Before You Arrive -->
+      <div class="know-card reveal">
+        <h3 class="know-card-title">Before You Arrive</h3>
+        <ul class="know-list">
+          <li><span class="know-icon">🎒</span> Bags will be checked at the gate.</li>
+          <li><span class="know-icon">🚫</span> No outside coolers or alcohol.</li>
+          <li><span class="know-icon">🪑</span> Lawn chairs are welcome — please bring them unbagged.</li>
+          <li><span class="know-icon">↩️</span> Re-entry is allowed.</li>
+          <li><span class="know-icon">🎟️</span> Tickets will be available at the gate while supplies last.</li>
+        </ul>
+      </div>
+
+      <!-- Parking -->
+      <div class="know-card reveal">
+        <h3 class="know-card-title">Parking</h3>
+        <p class="know-parking-warning">
+          The Old Dog Tavern lot fills up quickly. Please <strong>do not park</strong> at the Nephrology Center next door.
+        </p>
+        <p class="know-parking-sub">Additional Parking Options</p>
+        <ul class="know-parking-list">
+          <li>
+            <a class="know-parking-row" href="https://maps.google.com/?q=517+Walbridge+Ave+Kalamazoo+MI+49007" target="_blank" rel="noopener">
+              <span class="know-parking-name">The River Church</span>
+              <span class="know-parking-addr">517 Walbridge Ave ↗</span>
+            </a>
+          </li>
+          <li>
+            <div class="know-parking-row">
+              <span class="know-parking-name">Street Parking</span>
+              <span class="know-parking-addr">Free in many nearby locations</span>
+            </div>
+          </li>
+          <li>
+            <a class="know-parking-row" href="https://maps.google.com/?q=306+N+Rose+St+Kalamazoo+MI+49007" target="_blank" rel="noopener">
+              <span class="know-parking-name">Arcadia District Parking Ramp 4</span>
+              <span class="know-parking-addr">306 N. Rose St. ↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="know-parking-row" href="https://maps.google.com/?q=140+S+Edwards+St+Kalamazoo+MI+49007" target="_blank" rel="noopener">
+              <span class="know-parking-name">Haymarket District Lot 1</span>
+              <span class="know-parking-addr">140 S. Edwards St. ↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="know-parking-row" href="https://maps.google.com/?q=130+Portage+St+Kalamazoo+MI+49007" target="_blank" rel="noopener">
+              <span class="know-parking-name">Kalamazoo Mall Parking Ramp 3</span>
+              <span class="know-parking-addr">130 Portage St. ↗</span>
+            </a>
+          </li>
+          <li>
+            <a class="know-parking-row" href="https://maps.google.com/?q=136+E+South+St+Kalamazoo+MI+49007" target="_blank" rel="noopener">
+              <span class="know-parking-name">Epic Center Parking Ramp 2</span>
+              <span class="know-parking-addr">136 E. South St. ↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── VENUE SPOTLIGHT ───────────────────────────────────────── -->
 <section class="venue-spotlight">
