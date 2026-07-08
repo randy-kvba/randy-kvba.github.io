@@ -297,10 +297,11 @@
           <div class="name">Mick Kolassa</div>
           <div class="role">Board Member</div>
         </div>
-        <div class="board-card">
-          <div class="board-avatar">JH</div>
+        <div class="board-card has-bio" onclick="document.getElementById('boardModalHaklin').classList.add('open')" role="button" tabindex="0" aria-label="View Joe Haklin bio">
+          <img src="assets/images/joe-haklin.jpg" alt="Joe Haklin" class="board-avatar-photo" />
           <div class="name">Joe Haklin</div>
           <div class="role">Board Member</div>
+          <div class="bio-hint">View Bio ›</div>
         </div>
       </div>
       <p style="text-align:center; color:var(--gray); margin-top:1.5rem; font-size:0.9rem;">
@@ -566,11 +567,15 @@
   document.getElementById('boardModalTreasurer').addEventListener('click', function(e) {
     if (e.target === this) this.classList.remove('open');
   });
+  document.getElementById('boardModalHaklin').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('open');
+  });
   // Close on Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       document.getElementById('boardModal').classList.remove('open');
       document.getElementById('boardModalTreasurer').classList.remove('open');
+      document.getElementById('boardModalHaklin').classList.remove('open');
     }
   });
   // Keyboard activation for bio cards
@@ -613,6 +618,26 @@ function toggleBio(bioId, toggleId) {
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn Profile
       </a>
+    </div>
+  </div>
+</div>
+
+<!-- ── Joe Haklin Bio Modal ────────────────────────────── -->
+<div id="boardModalHaklin" role="dialog" aria-modal="true" aria-labelledby="modalNameHaklin">
+  <div class="board-modal-box">
+    <button class="board-modal-close" onclick="document.getElementById('boardModalHaklin').classList.remove('open')" aria-label="Close">&times;</button>
+    <div class="board-modal-header">
+      <img src="assets/images/joe-haklin.jpg" alt="Joe Haklin" />
+      <div>
+        <div class="modal-name" id="modalNameHaklin">Joe Haklin</div>
+        <div class="modal-role">Board Member</div>
+        <div class="modal-since">On the KVBA Board since January 2020</div>
+      </div>
+    </div>
+    <div class="board-modal-body">
+      <p>Joe Haklin has served on the KVBA Board since January 2020, where he chairs the annual KVBA Golf Committee, organizing the Birdies, Bogeys &amp; Blues fundraiser outing that helps support the organization's mission.</p>
+      <p>Before joining KVBA, Joe spent 23 years as a college basketball coach and 11 years as a college athletic director, building a career centered on leadership, mentorship, and team building.</p>
+      <p>Joe doesn't play an instrument, but he loves the sound of blues music and enjoys researching its history and its deep connection to rock and roll. Albert King and Stevie Ray Vaughan rank among his all-time favorite blues performers.</p>
     </div>
   </div>
 </div>
