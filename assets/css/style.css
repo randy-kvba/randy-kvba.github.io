@@ -304,6 +304,10 @@ section    { padding: 4.5rem 0; }
 }
 .masonry-grid .gallery-item img { width: 100%; height: auto; border-radius: 8px; }
 .masonry-grid .gallery-item.is-hidden { display: none; }
+.gallery-credit {
+  text-align: center; color: var(--gray); font-size: 0.85rem;
+  letter-spacing: 0.04em; margin: 1.25rem 0 0.25rem;
+}
 @media (max-width: 1024px) { .masonry-grid { column-count: 3; } }
 @media (max-width: 700px)  { .masonry-grid { column-count: 2; column-gap: 6px; } }
 @media (max-width: 768px) {
