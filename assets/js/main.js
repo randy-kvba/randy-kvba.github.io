@@ -129,8 +129,9 @@ if (lbFilmstrip && galleryItems.length) {
 }
 
 function updateLightbox() {
-  const img = galleryItems[currentIdx].querySelector('img');
-  lightboxImg.src = img.src;
+  const item = galleryItems[currentIdx];
+  const img = item.querySelector('img');
+  lightboxImg.src = item.dataset.full || img.src;
   lightboxImg.alt = img.alt || '';
   if (lbCounter) lbCounter.textContent = `${currentIdx + 1} / ${galleryItems.length}`;
   // Update filmstrip active state and scroll thumb into view
@@ -165,6 +166,19 @@ function shiftLightbox(dir) {
 }
 
 galleryItems.forEach((item, i) => item.addEventListener('click', () => openLightbox(i)));
+
+// ── Gallery filters ──────────────────────────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    galleryItems.forEach(item => {
+      const show = filter === 'all' || item.dataset.cat === filter;
+      item.classList.toggle('is-hidden', !show);
+    });
+  });
+});
 document.querySelector('.lb-close')?.addEventListener('click', closeLightbox);
 document.querySelector('.lb-next')?.addEventListener('click', () => shiftLightbox(1));
 document.querySelector('.lb-prev')?.addEventListener('click', () => shiftLightbox(-1));
