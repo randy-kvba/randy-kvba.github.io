@@ -239,6 +239,52 @@ function parseCSVLine(line) {
   return result;
 }
 
+// Accepts "YYYY-MM-DD" as-is. Also accepts human-entered formats like
+// "August 22", "August 1 2026", "August 13, 2026" and normalizes them to
+// YYYY-MM-DD so the sheet doesn't have to be typed in strict ISO format.
+// When no year is given, assumes the current year, unless that date has
+// already passed, in which case it rolls forward to next year.
+const MONTH_NAMES = {
+  january:0, february:1, march:2, april:3, may:4, june:5, july:6,
+  august:7, september:8, october:9, november:10, december:11,
+  jan:0, feb:1, mar:2, apr:3, jun:5, jul:6, aug:7, sep:8, sept:8, oct:9, nov:10, dec:11
+};
+
+function normalizeDate(raw) {
+  if (!raw) return null;
+  const s = raw.trim();
+
+  // Already ISO
+  if (/^\d{4}-\d{2}-\d{2}$/.test(s)) return s;
+
+  // "Month D", "Month D, YYYY", "Month D YYYY"
+  const m = s.match(/^([A-Za-z]+)\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})?$/);
+  if (m) {
+    const monIdx = MONTH_NAMES[m[1].toLowerCase()];
+    if (monIdx !== undefined) {
+      const day = parseInt(m[2], 10);
+      let year = m[3] ? parseInt(m[3], 10) : new Date().getFullYear();
+      let d = new Date(year, monIdx, day);
+      if (!m[3]) {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        if (d < today) { year += 1; d = new Date(year, monIdx, day); }
+      }
+      const mm = String(monIdx + 1).padStart(2, '0');
+      const dd = String(day).padStart(2, '0');
+      return `${year}-${mm}-${dd}`;
+    }
+  }
+
+  // Fallback: let the browser try (handles things like "8/22/2026")
+  const nd = new Date(s);
+  if (!isNaN(nd)) {
+    return `${nd.getFullYear()}-${String(nd.getMonth() + 1).padStart(2, '0')}-${String(nd.getDate()).padStart(2, '0')}`;
+  }
+
+  return null;
+}
+
 function parseCSV(text) {
   const lines = text.split('\n').filter(l => l.trim());
   if (lines.length < 2) return [];
@@ -247,6 +293,8 @@ function parseCSV(text) {
     const vals = parseCSVLine(line);
     const obj = {};
     headers.forEach((h, i) => obj[h] = (vals[i] || '').trim().replace(/^"|"$/g, ''));
+    const normalized = normalizeDate(obj.date);
+    if (normalized) obj.date = normalized;
     return obj;
   }).filter(e => e.date && e.date.match(/^\d{4}-\d{2}-\d{2}$/));
 }
