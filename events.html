@@ -343,9 +343,14 @@ function renderEvents(events) {
       const loc     = venue + (venue && city ? ', ' : '') + city;
       const linkO   = safeUrl(ev.url) ? `<a href="${escHtml(safeUrl(ev.url))}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">` : '';
       const linkC   = ev.url ? '</a>' : '';
+      const imgSrc  = safeUrl(ev.image) || '';
+      const photoHtml = imgSrc
+        ? `<div class="event-band-photo"><img src="${escHtml(imgSrc)}" alt="${escHtml(ev.title)}" loading="lazy" /></div>`
+        : '';
       html += `
         <div class="event-card-lg">
           <div class="event-date"><span class="day">${dayNum}</span><span class="month">${monAbbr}</span></div>
+          ${photoHtml}
           <div class="event-info">
             <h3>${linkO}${escHtml(ev.title)}${linkC}</h3>
             <div class="event-meta">

@@ -448,6 +448,9 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
 .event-card-lg .event-date .day { font-size: 3rem; }
 .event-card-lg .event-info { padding: 2rem 2.5rem; }
 .event-card-lg .event-info h3 { font-size: 1.7rem; margin-bottom: 0.6rem; }
+.event-card-lg .event-band-photo { width: 130px; flex-shrink: 0; align-self: stretch; overflow: hidden; }
+.event-card-lg .event-band-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+@media (max-width: 640px) { .event-card-lg .event-band-photo { display: none; } }
 .event-desc { color: var(--light); font-size: 1rem; margin-top: 0.5rem; }
 .month-header {
   font-family: var(--heading); font-size: 1.6rem; letter-spacing: 0.2em;
