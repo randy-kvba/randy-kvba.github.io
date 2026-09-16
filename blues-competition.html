@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Boogie Woogie Bob Peters Scholarship | KVBA Kalamazoo</title>
-  <meta name="description" content="The Boogie Woogie Bob Peters Scholarship awards $1,500 annually to a graduating Southwest Michigan senior active in music. Honoring a Kalamazoo blues legend." />
+  <title>26th Annual KVBA Blues Competition | KVBA Kalamazoo</title>
+  <meta name="description" content="Apply for the 26th Annual KVBA Blues Competition, October 11th at Shakespeare's Pub in Kalamazoo. The winner represents KVBA at the International Blues Challenge in Memphis, TN, January 19-23, 2027." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,50 +12,6 @@
   <style>
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── Legacy pull quote ── */
-    .legacy-quote {
-      font-family: var(--heading);
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      color: var(--blue); line-height: 1.2;
-      border-left: 4px solid var(--blue);
-      padding: 1.25rem 0 1.25rem 2rem;
-      margin: 2rem 0;
-    }
-
-    /* ── Award amount callout ── */
-    .award-callout {
-      background: linear-gradient(135deg, #061018 0%, #0a1f2e 100%);
-      border: 1px solid rgba(28,200,232,0.4);
-      border-radius: var(--radius);
-      padding: 2.5rem; text-align: center;
-    }
-    .award-amount {
-      font-family: var(--heading); font-size: 5rem;
-      color: var(--blue); line-height: 1; display: block;
-    }
-    .award-label {
-      font-family: var(--heading); font-size: 1rem;
-      letter-spacing: 0.3em; color: var(--light);
-      text-transform: uppercase; display: block;
-      margin-top: 0.25rem;
-    }
-
-    /* ── Requirement items ── */
-    .req-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
-    .req-item {
-      display: flex; gap: 1.25rem; align-items: flex-start;
-      background: var(--bg-3); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.25rem 1.5rem;
-      transition: border-color var(--ease);
-    }
-    .req-item:hover { border-color: rgba(28,200,232,0.3); }
-    .req-num {
-      font-family: var(--heading); font-size: 1.8rem; color: var(--blue);
-      line-height: 1; flex-shrink: 0; min-width: 2rem; padding-top: 2px;
-    }
-    .req-text { color: var(--light); font-size: 0.95rem; line-height: 1.65; }
-    .req-text strong { color: var(--white); display: block; margin-bottom: 0.25rem; font-size: 1rem; }
 
     /* ── Deadline strip ── */
     .deadline-grid {
@@ -75,31 +31,45 @@
       .deadline-grid { grid-template-columns: 1fr; }
     }
 
-    /* ── Bob Peters legacy section ── */
-    .legacy-grid {
+    /* ── Urgent deadline banner ── */
+    .urgent-banner {
+      background: linear-gradient(135deg, #2a0f0f 0%, #1a0a0a 100%);
+      border: 1px solid rgba(232,72,28,0.5);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem; text-align: center; margin-bottom: 3rem;
+    }
+    .urgent-banner strong { color: #ff7a5c; }
+    .urgent-banner p { color: var(--light); margin: 0; }
+
+    /* ── Requirement items ── */
+    .req-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; margin: 2rem 0; }
+    .req-item {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      transition: border-color var(--ease);
+    }
+    .req-item:hover { border-color: rgba(28,200,232,0.3); }
+    .req-num {
+      font-family: var(--heading); font-size: 1.8rem; color: var(--blue);
+      line-height: 1; flex-shrink: 0; min-width: 2rem; padding-top: 2px;
+    }
+    .req-text { color: var(--light); font-size: 0.95rem; line-height: 1.65; }
+    .req-text strong { color: var(--white); display: block; margin-bottom: 0.25rem; font-size: 1rem; }
+
+    /* ── IBC intro grid ── */
+    .ibc-grid {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 4rem; align-items: center;
     }
     @media (max-width: 860px) {
-      .legacy-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ibc-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
-
-    /* ── Bob photo frame ── */
-    .bob-photo-wrap {
-      position: relative;
-    }
-    .bob-photo-wrap img {
+    .ibc-photo-wrap img {
       width: 100%; display: block;
       border-radius: var(--radius);
       border: 1px solid rgba(28,200,232,0.25);
       box-shadow: 0 0 60px rgba(28,200,232,0.12), 0 20px 60px rgba(0,0,0,0.6);
-    }
-    .bob-photo-caption {
-      margin-top: 0.85rem;
-      text-align: center;
-      font-style: italic;
-      font-size: 0.95rem;
-      color: var(--gray);
     }
 
     /* ── Contact card ── */
@@ -174,157 +144,140 @@
 </nav>
 
 <!-- ─── PAGE HERO ─────────────────────────────────────────────── -->
-<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.45), rgba(8,8,8,0.98)), url('assets/images/boogie-woogie-bob.webp'); background-size: cover; background-position: center top;">
+<div class="page-hero" style="background-image: linear-gradient(to bottom, rgba(8,8,8,0.45), rgba(8,8,8,0.98)), url('assets/images/540386653_1210858391083619_7931976593139981460_n.jpg'); background-size: cover; background-position: center top;">
   <div class="container">
-    <span class="section-label">KVBA Education Fund</span>
-    <h1>"Boogie Woogie" Bob Peters <span class="blue">Scholarship</span></h1>
-    <p>An annual $1,500 award honoring the legacy of a beloved Kalamazoo blues legend — and investing in the next generation of musicians.</p>
+    <span class="section-label">Road to Memphis</span>
+    <h1>26th Annual KVBA <span class="blue">Blues Competition</span></h1>
+    <p>Kalamazoo-area bands and solo/duo artists compete for the chance to represent KVBA at the International Blues Challenge in Memphis, TN.</p>
   </div>
 </div>
 
-<!-- ─── ABOUT BOB ─────────────────────────────────────────────── -->
+<!-- ─── ABOUT THE COMPETITION ─────────────────────────────────────────────── -->
 <section>
   <div class="container">
-    <div class="legacy-grid reveal">
+    <div class="ibc-grid reveal">
       <div>
-        <span class="section-label">In His Memory</span>
-        <h2>The Legacy of <span class="blue">"Boogie Woogie" Bob Peters</span></h2>
-        <p style="color:var(--light); margin-bottom:1rem;">Bob Peters was a fixture on the Kalamazoo music landscape for decades — a gifted pianist, guitar player, and music historian who was beloved throughout the Southwest Michigan blues community.</p>
-        <p style="color:var(--light); margin-bottom:1rem;">A multi-talented artist and tireless champion of the blues, Peters left behind a legacy of music, art, and deep relationships that his family, friends, and loyal fans strive to keep alive. He passed away suddenly on March 13, 2010.</p>
-        <p style="color:var(--light); margin-bottom:1rem;">In 2013, the KVBA and the Peters Family joined forces to create a scholarship fund dedicated to his memory and musical legacy. A vision of keeping that passion alive and passing it along to future generations became the mission of the fund.</p>
-        <div class="legacy-quote">
-          "Keeping the legacy and passion alive and passing it along for future generations."
-        </div>
-        <p style="color:var(--gray); font-size:0.9rem; font-style:italic;">— The Peters Family and KVBA Board of Directors</p>
+        <span class="section-label">Blues Challenge &amp; IBC</span>
+        <h2>Representing <span class="blue">Kalamazoo</span> on the World Stage</h2>
+        <p style="color:var(--light); margin-bottom:1rem;">KVBA is a member of the Blues Foundation, which hosts the International Blues Challenge (IBC) in Memphis every January &mdash; the world's largest gathering of blues artists and one of the most prestigious battle-of-the-bands competitions in the genre.</p>
+        <p style="color:var(--light); margin-bottom:1rem;">Each fall, KVBA hosts its own Blues Competition right here in Kalamazoo, where local bands and solo/duo artists compete for the honor of representing our chapter in Memphis.</p>
+        <p style="color:var(--light);">This year's competition is <strong style="color:var(--white);">Sunday, October 11th</strong> at Shakespeare's Pub. The winning act heads to Memphis for the <strong style="color:var(--white);">2027 International Blues Challenge, January 19&ndash;23</strong>.</p>
       </div>
-      <div class="bob-photo-wrap">
-        <img src="assets/images/boogie-woogie-bob.webp"
-             alt="Boogie Woogie Bob Peters" />
-        <p class="bob-photo-caption">"Boogie Woogie" Bob Peters — blues musician, historian, and beloved Kalamazoo icon</p>
+      <div class="ibc-photo-wrap">
+        <img src="assets/images/558804230_1241107868058671_965261973735089613_n.jpg" alt="Blues musician on stage" />
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Award callout -->
-    <div class="award-callout reveal" style="max-width:560px; margin:3rem auto 0;">
-      <span class="award-amount">$1,500</span>
-      <span class="award-label">Annual Scholarship Award</span>
-      <div style="height:1px; background:var(--border); margin:1.75rem 0;"></div>
-      <p style="color:var(--light); font-size:0.9rem; margin-bottom:0;">Sponsored by the Bob Peters Family and the Kalamazoo Valley Blues Association. Awarded each year to a graduating senior from a Southwest Michigan school who demonstrates excellence in music and academics.</p>
+<!-- ─── EVENT DETAILS ─────────────────────────────────────────────── -->
+<section class="section-light" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Mark Your Calendar</span>
+      <h2>Competition &amp; <span class="blue">Deadlines</span></h2>
+    </div>
+    <div class="deadline-grid reveal">
+      <div class="deadline-item">
+        <span class="d-icon">📋</span>
+        <span class="d-label">Applications Due</span>
+        <span class="d-value blue">September 26</span>
+      </div>
+      <div class="deadline-item">
+        <span class="d-icon">🎤</span>
+        <span class="d-label">KVBA Competition</span>
+        <span class="d-value">October 11<br><span style="font-size:0.9rem; color:var(--gray);">Shakespeare's Pub, Kalamazoo</span></span>
+      </div>
+      <div class="deadline-item">
+        <span class="d-icon">🏆</span>
+        <span class="d-label">IBC — Memphis, TN</span>
+        <span class="d-value">Jan 19&ndash;23, 2027</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ─── ELIGIBILITY ─────────────────────────────────────────────── -->
-<section class="section-light" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section-light">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">Who Can Apply</span>
+      <span class="section-label">Who Can Compete</span>
       <h2>Eligibility &amp; <span class="blue">Requirements</span></h2>
-      <p>This scholarship is open to graduating seniors who have been active in music programs throughout their high school career.</p>
+      <p>KVBA solely determines the eligibility of area bands and solo/duo acts for this competition.</p>
     </div>
 
     <ul class="req-list reveal">
       <li class="req-item">
         <span class="req-num">1</span>
         <div class="req-text">
-          <strong>Active in Music</strong>
-          Must have been active in a music program — vocal or instrumental — during their high school career, and in the community.
+          <strong>Working Band or Act</strong>
+          Must be a working band or solo/duo act &mdash; not one put together for the purposes of competing.
         </div>
       </li>
       <li class="req-item">
         <span class="req-num">2</span>
         <div class="req-text">
-          <strong>College / University Acceptance</strong>
-          Must have been accepted to a college or university. Proof of program acceptance in the form of an official signature will be required.
+          <strong>Blues Foundation Eligibility</strong>
+          Must meet all eligibility criteria published by the Blues Foundation for the Official IBC Rules and Event Summary.
         </div>
       </li>
       <li class="req-item">
         <span class="req-num">3</span>
         <div class="req-text">
-          <strong>Essay or Video Submission</strong>
-          Write a 2-page, double-spaced essay <em>or</em> submit a 3–5 minute video on the topic: <em>"What Contributions has Blues Music Made to Our American Culture?"</em> Be sure to footnote your sources.
+          <strong>Willing &amp; Able to Travel</strong>
+          Must be willing to travel to Memphis, TN for the International Blues Challenge if selected.
         </div>
       </li>
       <li class="req-item">
         <span class="req-num">4</span>
         <div class="req-text">
-          <strong>Music Involvement &amp; Depth</strong>
-          In addition to the essay or video, emphasis will be placed on the number of years a student has been in music classes and extra musical endeavors — musicals, special ensembles, music outside of school, etc.
-        </div>
-      </li>
-      <li class="req-item">
-        <span class="req-num">5</span>
-        <div class="req-text">
-          <strong>Southwest Michigan School</strong>
-          Qualified candidates must be students of a Southwest Michigan high school.
+          <strong>Responsible Spokesperson</strong>
+          The application's spokesperson must be 18 years of age or older and responsible for the act.
         </div>
       </li>
     </ul>
   </div>
 </section>
 
-<!-- ─── TIMELINE ─────────────────────────────────────────────── -->
-<section class="section-light">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="section-label">Important Dates</span>
-      <h2>Application <span class="blue">Timeline</span></h2>
-    </div>
-    <div class="deadline-grid reveal">
-      <div class="deadline-item">
-        <span class="d-icon">📋</span>
-        <span class="d-label">Applications Due</span>
-        <span class="d-value blue">June 13</span>
-      </div>
-      <div class="deadline-item">
-        <span class="d-icon">📬</span>
-        <span class="d-label">Winner Notified</span>
-        <span class="d-value">June 27</span>
-      </div>
-      <div class="deadline-item">
-        <span class="d-icon">🎶</span>
-        <span class="d-label">Announced At</span>
-        <span class="d-value">Kalamazoo Blues Festival<br><span style="font-size:0.9rem; color:var(--gray);">July 11</span></span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── APPLY ─────────────────────────────────────────────── -->
-<section class="section-light" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section id="apply" class="section-light" style="border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="container">
     <div class="section-header reveal">
-      <span class="section-label">Ready to Apply?</span>
-      <h2>Submit Your <span class="blue">Application</span></h2>
-      <p>Click below to access the application form. Questions? Reach out to Lisa Chilton directly.</p>
+      <span class="section-label">Ready to Compete?</span>
+      <h2>Download the <span class="blue">Application</span></h2>
+      <p>Fill out the application form below and mail it in, or email it to the contacts listed.</p>
     </div>
 
     <div class="reveal" style="display:flex; flex-direction:column; align-items:center; gap:2rem;">
 
-      <a href="scholarship-apply.html"
-         class="btn btn-primary" style="font-size:1.3rem; padding:1.1rem 3rem;">
-        Apply for the Scholarship
+      <div class="urgent-banner" style="max-width:640px;">
+        <p><strong>Applications must be received by September 26, 2026.</strong> Acts are considered in the order applications are received.</p>
+      </div>
+
+      <a href="Files/2026%20KVBA%20Blues%20Competition%20Application.doc"
+         class="btn btn-primary" style="font-size:1.3rem; padding:1.1rem 3rem;" download>
+        Download Application Form
       </a>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem; width:100%; max-width:640px;">
         <div class="contact-card">
           <div class="contact-icon">✉️</div>
           <div>
-            <h4>Questions?</h4>
-            <p>Contact Lisa Chilton at<br><a href="mailto:lisa@kvba.org">lisa@kvba.org</a></p>
+            <h4>Dennis Massingill</h4>
+            <p>(269) 806-8508<br><a href="mailto:dmass55@aol.com">dmass55@aol.com</a></p>
           </div>
         </div>
         <div class="contact-card">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon">✉️</div>
           <div>
-            <h4>Sincerely,</h4>
-            <p>The Peters Family and<br>KVBA Board of Directors</p>
+            <h4>Mike Depoian</h4>
+            <p>(248) 613-7564<br><a href="mailto:miked@kvba.org">miked@kvba.org</a></p>
           </div>
         </div>
       </div>
 
-      <p style="color:var(--gray); font-size:0.97rem; text-align:center; max-width:480px;">
-        <strong style="color:var(--white);">NOTE:</strong> Qualified candidates must be students of a Southwest Michigan school.
+      <p style="color:var(--gray); font-size:0.97rem; text-align:center; max-width:520px;">
+        Mail completed applications to: <strong style="color:var(--white);">Dennis Massingill, 1679 Sycamore St., Otsego, MI 49078</strong> &mdash; or email a scanned copy to the contacts above.
       </p>
 
     </div>
@@ -335,12 +288,12 @@
 <section style="text-align:center;">
   <div class="container">
     <div class="reveal" style="max-width:600px; margin:0 auto;">
-      <span class="section-label">Support the Fund</span>
-      <h2>Help Us <span class="blue">Keep It Going</span></h2>
-      <p style="color:var(--light); margin-bottom:2rem;">Your KVBA membership and donations directly fund this scholarship. Every dollar helps carry Bob Peters' legacy forward and invests in the next generation of blues musicians.</p>
+      <span class="section-label">Come Cheer Them On</span>
+      <h2>Join Us at <span class="blue">Shakespeare's Pub</span></h2>
+      <p style="color:var(--light); margin-bottom:2rem;">Sunday, October 11th &mdash; come support Kalamazoo's blues community as local acts compete for a trip to Memphis.</p>
       <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
         <a href="membership.html" class="btn btn-primary">Become a Member</a>
-        <a href="https://checkout.square.site/merchant/CATDS6CR09XSK/checkout/AYVOXVUKCVJPOIWJMNQAFCZN" target="_blank" rel="noopener" class="btn btn-blue-outline">Make a Donation</a>
+        <a href="events.html" class="btn btn-blue-outline">View All Events</a>
       </div>
     </div>
   </div>
@@ -385,7 +338,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
+      <p>&copy; 2026 Kalamazoo Valley Blues Association. All rights reserved. | 501(c)(3) Nonprofit</p>
       <div class="social-links">
         <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
