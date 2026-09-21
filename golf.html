@@ -162,6 +162,54 @@
     .sponsor-card li   { font-size: 1rem; color: var(--light); display: flex; gap: 0.5rem; }
     .sponsor-card li::before { content: '★'; color: var(--blue); font-size: 0.65rem; flex-shrink: 0; margin-top: 3px; }
 
+    /* ── Sponsor thank-you ── */
+    .sponsor-thanks-intro {
+      max-width: 700px; margin: 0 auto 3rem; text-align: center;
+      color: var(--light); font-size: 1.05rem; line-height: 1.8;
+    }
+    .sponsor-category { margin-bottom: 2.75rem; }
+    .sponsor-category:last-child { margin-bottom: 0; }
+    .sponsor-category-title {
+      display: flex; align-items: center; gap: 1.25rem;
+      justify-content: center; margin-bottom: 1.4rem;
+    }
+    .sponsor-category-title span {
+      font-family: var(--heading); font-size: 1rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--blue); white-space: nowrap;
+    }
+    .sponsor-category-title::before,
+    .sponsor-category-title::after {
+      content: ''; height: 1px; background: var(--border); flex: 1; max-width: 160px;
+    }
+    .sponsor-pills {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem;
+    }
+    .sponsor-pill {
+      background: var(--bg-3); border: 1px solid var(--border);
+      border-radius: 30px; padding: 0.6rem 1.4rem;
+      font-size: 0.97rem; color: var(--light); letter-spacing: 0.02em;
+      transition: transform var(--ease), border-color var(--ease), color var(--ease), background var(--ease), box-shadow var(--ease);
+    }
+    .sponsor-pill:hover {
+      transform: translateY(-3px); border-color: rgba(28,200,232,0.5);
+      color: var(--white); background: rgba(28,200,232,0.08);
+      box-shadow: 0 8px 24px var(--blue-glow);
+    }
+    .sponsor-pill.featured {
+      border-color: rgba(28,200,232,0.35); color: var(--white);
+      font-family: var(--heading); letter-spacing: 0.04em; font-size: 1.05rem;
+      padding: 0.65rem 1.6rem;
+    }
+    .sponsor-thanks-note {
+      text-align: center; color: var(--gray); font-size: 1rem;
+      margin-top: 3rem; max-width: 640px; margin-left: auto; margin-right: auto;
+    }
+    @media (max-width: 640px) {
+      .sponsor-category-title span { font-size: 0.85rem; letter-spacing: 0.18em; }
+      .sponsor-category-title::before, .sponsor-category-title::after { max-width: 40px; }
+      .sponsor-pill { font-size: 0.9rem; padding: 0.5rem 1.1rem; }
+    }
+
     /* ── Light-section overrides ── */
     .section-light .pricing-card.featured {
       background: linear-gradient(160deg, #c8e4ed 0%, var(--bg-3) 100%);
@@ -312,6 +360,94 @@
       <img src="Images/golf2026_4.jpg" alt="Golf Outing 2026" style="width:100%; border-radius:6px; object-fit:cover; aspect-ratio:16/9;" />
     </div>
 
+  </div>
+</section>
+
+<!-- ─── SPONSOR THANK YOU ─────────────────────────────────────────────── -->
+<section style="border-top:1px solid var(--border); padding:5rem 0;">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">With Deep Gratitude</span>
+      <h2>Thank You to Our <span class="blue">2026 Sponsors</span></h2>
+    </div>
+    <p class="sponsor-thanks-intro reveal">
+      Birdies, Bogeys &amp; Blues only happens because of the generosity of the businesses, organizations, and individuals below. From donated tee times to raffle prizes, dinner to live music on the veranda, your support carried this event from the first swing to the last note — and it keeps KVBA's education programs and the Boogie Woogie Bob Peters Scholarship going strong. Thank you for standing with us.
+    </p>
+
+    <div class="reveal">
+
+      <div class="sponsor-category">
+        <div class="sponsor-category-title"><span>Golf Services</span></div>
+        <div class="sponsor-pills">
+          <span class="sponsor-pill featured">Indian Run Golf Club</span>
+          <span class="sponsor-pill featured">Angel's Crossing Golf Club</span>
+          <span class="sponsor-pill featured">Gull Lake View Golf Resort</span>
+          <span class="sponsor-pill featured">Ridgeview Golf Club</span>
+          <span class="sponsor-pill featured">Milham Park Golf Club</span>
+        </div>
+      </div>
+
+      <div class="sponsor-category">
+        <div class="sponsor-category-title"><span>Athletics &amp; Entertainment</span></div>
+        <div class="sponsor-pills">
+          <span class="sponsor-pill">Western Michigan Athletic Department</span>
+          <span class="sponsor-pill">Western Michigan Men's Soccer Program</span>
+          <span class="sponsor-pill">Kalamazoo Growlers Baseball Club</span>
+          <span class="sponsor-pill">OC/DC Rock Band</span>
+        </div>
+      </div>
+
+      <div class="sponsor-category">
+        <div class="sponsor-category-title"><span>Restaurants &amp; Hospitality</span></div>
+        <div class="sponsor-pills">
+          <span class="sponsor-pill">Chin Chin Asian Restaurant</span>
+          <span class="sponsor-pill">Erbelli's Restaurant</span>
+          <span class="sponsor-pill">Larue's Family Restaurant</span>
+          <span class="sponsor-pill">Paw Paw Brewing Company</span>
+          <span class="sponsor-pill">Jac's Restaurant</span>
+          <span class="sponsor-pill">Fletcher's Pub in Texas Corners</span>
+          <span class="sponsor-pill">Brewster's Pub in Paw Paw</span>
+          <span class="sponsor-pill">The Mill in Vicksburg</span>
+          <span class="sponsor-pill">Firekeeper's Casino</span>
+          <span class="sponsor-pill">O'Duffy's Pub and Cosmo's Cucina</span>
+          <span class="sponsor-pill">Sam's Club</span>
+          <span class="sponsor-pill">The Dock at Bayview</span>
+        </div>
+      </div>
+
+      <div class="sponsor-category">
+        <div class="sponsor-category-title"><span>Business &amp; Community Partners</span></div>
+        <div class="sponsor-pills">
+          <span class="sponsor-pill">RJO Mechanical Company</span>
+          <span class="sponsor-pill">Baird Financial Services</span>
+          <span class="sponsor-pill">Healthy Family Chiropractic</span>
+          <span class="sponsor-pill">KALSEE Credit Union</span>
+          <span class="sponsor-pill">Bright Financial Services</span>
+          <span class="sponsor-pill">Jim &amp; Kevan Hess, Jaqua Realtors</span>
+          <span class="sponsor-pill">Lisa Faber, Jaqua Realtors</span>
+        </div>
+      </div>
+
+      <div class="sponsor-category">
+        <div class="sponsor-category-title"><span>Friends of KVBA</span></div>
+        <div class="sponsor-pills">
+          <span class="sponsor-pill">Tom Olson</span>
+          <span class="sponsor-pill">Dave Bogan</span>
+          <span class="sponsor-pill">Steve St. John</span>
+          <span class="sponsor-pill">Joe Haklin</span>
+          <span class="sponsor-pill">Nick Giard</span>
+          <span class="sponsor-pill">Mitch Kachun</span>
+          <span class="sponsor-pill">Mike Depoian</span>
+          <span class="sponsor-pill">Jeff Bright</span>
+          <span class="sponsor-pill">Joy Sage</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="sponsor-thanks-note reveal">
+      Interested in sponsoring next year's outing? <a href="#sponsorships" style="color:var(--blue);">See sponsorship opportunities</a> or reach us at <a href="mailto:kvba@kvba.org" style="color:var(--blue);">kvba@kvba.org</a>.
+    </p>
   </div>
 </section>
 
